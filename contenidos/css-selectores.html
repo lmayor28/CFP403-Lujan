@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores CSS Fundamentales</title>
+     <style> /* PEGAR AQUÍ LOS ESTILOS CSS CONSISTENTES (body, header, .container, h2, h3, p, pre, code, nav, footer, etc.) */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; color: #333; line-height: 1.7; } /* Color de fondo diferente */
+        header { background-color: #fd7e14; color: #fff; padding: 25px 0; text-align: center; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); } /* Color diferente */
+        header h1 { margin: 0; font-size: 2.8em; }
+        .container { width: 85%; max-width: 960px; margin: auto; overflow: hidden; background-color: #fff; padding: 30px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.15); border-radius: 10px; }
+        .container h2, .container h3 { color: #444; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-top: 25px; }
+        .container p { margin-bottom: 15px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-left: 4px solid #fd7e14; overflow-x: auto; margin: 15px 0; } /* Borde que coincide */
+        code { font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 0.9em; }
+        pre code { display: block; }
+        nav ul { padding: 0; list-style: none; text-align: center; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
+        nav ul li { display: inline-block; margin: 0 20px; }
+        nav ul li a { text-decoration: none; color: #007bff; font-weight: bold; font-size: 1.1em; padding: 5px 0; transition: color 0.3s ease; }
+        nav ul li a:hover { color: #0056b3; text-decoration: underline; }
+        footer { text-align: center; padding: 25px 0; margin-top: 30px; color: #777; font-size: 0.9em; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Selectores CSS Fundamentales</h1>
+    </header>
+
+    <div class="container">
+        <h2>¿Qué son los Selectores CSS?</h2>
+        <p>Los selectores CSS son patrones que se utilizan para **seleccionar y apuntar a elementos HTML** que quieres estilizar. Sin selectores, el CSS no sabría a qué parte de tu página aplicar un estilo determinado.</p>
+        <p>Son la parte inicial de una regla CSS (antes de las llaves <code>{}</code>).</p>
+
+        <h3>Selectores Comunes</h3>
+
+        <h4>Selector de Elemento (Type Selector)</h4>
+        <p>Selecciona todos los elementos de un tipo HTML específico (ej: todos los párrafos <code>&lt;p&gt;</code>, todos los encabezados <code>&lt;h1&gt;</code>, etc.).</p>
+        <pre><code>p {
+  color: blue;
+}
+
+h1 {
+  text-align: center;
+}</code></pre>
+
+        <h4>Selector de ID (ID Selector)</h4>
+        <p>Selecciona un **único** elemento con un <code>id</code> específico. Los IDs deben ser únicos en una página HTML.</p>
+        <p>Se denota con el símbolo de almohadilla <code>#</code> seguido del valor del ID.</p>
+        <pre><code>#miElementoUnico {
+  border: 1px solid red;
+}</code></pre>
+        <p>HTML:</p>
+        <pre><code>&lt;div id="miElementoUnico"&gt;Este div tiene un ID.&lt;/div&gt;</code></pre>
+
+        <h4>Selector de Clase (Class Selector)</h4>
+        <p>Selecciona todos los elementos que tienen un atributo <code>class</code> específico. Las clases pueden ser reutilizadas en múltiples elementos.</p>
+        <p>Se denota con un punto <code>.</code> seguido del nombre de la clase.</p>
+         <pre><code>.destacado {
+  font-weight: bold;
+  color: green;
+}</code></pre>
+        <p>HTML:</p>
+        <pre><code>&lt;p class="destacado"&gt;Este párrafo está destacado.&lt;/p&gt;
+&lt;span class="destacado"&gt;Este span también.&lt;/span&gt;</code></pre>
+
+        <h4>Selector Descendiente (Descendant Selector)</h4>
+        <p>Selecciona un elemento que es descendiente de otro elemento (puede estar anidado a cualquier nivel dentro del primer elemento).</p>
+        <p>Se denota simplemente con un **espacio** entre los selectores.</p>
+        <pre><code>div p {
+  /* Selecciona todos los párrafos que están dentro de un div */
+  margin-bottom: 10px;
+}</code></pre>
+        <p>HTML:</p>
+        <pre><code>&lt;div&gt;
+  &lt;p&gt;Este párrafo será afectado.&lt;/p&gt;
+  &lt;section&gt;
+    &lt;p&gt;Este párrafo también será afectado.&lt;/p&gt; &lt;!-- Es descendiente del div --&gt;
+  &lt;/section&gt;
+&lt;/div&gt;
+&lt;p&gt;Este párrafo NO será afectado.&lt;/p&gt; &lt;!-- No está dentro de un div --&gt;</code></pre>
+
+        <h4>Selector Hijo Directo (Child Selector)</h4>
+        <p>Selecciona un elemento que es **hijo directo** de otro elemento (no descendientes anidados más profundos).</p>
+        <p>Se denota con el símbolo mayor que <code>></code>.</p>
+        <pre><code>ul > li {
+  /* Selecciona todos los elementos li que son hijos directos de un ul */
+  border-bottom: 1px dashed #ccc;
+}</code></pre>
+         <p>HTML:</p>
+        <pre><code>&lt;ul&gt;
+  &lt;li&gt;Ítem 1&lt;/li&gt; &lt;!-- Afectado --&gt;
+  &lt;li&gt;Ítem 2&lt;/li&gt; &lt;!-- Afectado --&gt;
+  &lt;li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Sub-ítem&lt;/li&gt; &lt;!-- NO afectado por el selector `ul > li` --&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+        <h4>Selector de Clase Múltiple</h4>
+        <p>Selecciona un elemento que tiene **TODAS** las clases especificadas.</p>
+        <p>Se denota encadenando los nombres de clase con puntos, sin espacios.</p>
+        <pre><code>.btn.activo {
+  /* Selecciona un elemento que tiene la clase 'btn' Y la clase 'activo' */
+  background-color: green;
+}</code></pre>
+         <p>HTML:</p>
+        <pre><code>&lt;button class="btn"&gt;Botón Normal&lt;/button&gt; &lt;!-- NO afectado --&gt;
+&lt;button class="btn activo"&gt;Botón Activo&lt;/button&gt; &lt;!-- Afectado --&gt;
+&lt;button class="activo"&gt;Solo Activo&lt;/button&gt; &lt;!-- NO afectado --&gt;</code></pre>
+
+        <p>Estos son solo los selectores más básicos, pero dominar su combinación te permitirá apuntar a casi cualquier elemento en tu HTML para darle estilo.</p>
+
+        <h3>Navegación</h3>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Volver al Índice Principal</a></li>
+                </ul>
+        </nav>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ejemplo de Selectores CSS. Contenido Educativo.</p>
+    </footer>
+
+</body>
+</html>

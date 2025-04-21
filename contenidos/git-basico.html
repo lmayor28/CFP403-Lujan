@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos Básicos de Git</title>
+    <style>
+        /* Estilos generales (repetidos para consistencia, idealmente irían en un CSS externo) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5; /* Color de fondo ligeramente diferente */
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: #5cb85c; /* Color diferente para el encabezado */
+            color: #fff;
+            padding: 25px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 960px;
+            margin: auto;
+            overflow: hidden;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+        }
+
+        .container h2, .container h3 {
+            color: #444;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+            margin-top: 25px;
+        }
+
+        .container p {
+            margin-bottom: 15px;
+        }
+
+        /* Estilos para bloques de código */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #5cb85c; /* Borde que coincide con el encabezado */
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        code {
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            font-size: 0.9em;
+        }
+
+        pre code {
+            display: block;
+        }
+
+        /* Estilos para la navegación */
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9em;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Git: Fundamentos del Control de Versiones</h1>
+    </header>
+
+    <div class="container">
+        <h2>¿Qué es Git?</h2>
+        <p>Git es un **sistema de control de versiones distribuido** gratuito y de código abierto diseñado para manejar todo, desde proyectos pequeños hasta muy grandes, con velocidad y eficiencia. Fue creado por Linus Torvalds (el creador de Linux).</p>
+        <p>La idea principal es que Git te ayuda a rastrear y registrar los cambios que haces en tus archivos a lo largo del tiempo, como una serie de "instantáneas" o "commits". Esto te permite:</p>
+        <ul>
+            <li>Ver el historial completo de tu proyecto.</li>
+            <li>Saber exactamente qué cambios se hicieron, quién los hizo y cuándo.</li>
+            <li>Revertir a versiones anteriores si algo sale mal.</li>
+            <li>Trabajar en diferentes características o ideas en paralelo sin afectar la versión principal del proyecto.</li>
+        </ul>
+
+        <h2>Conceptos Clave y Comandos Básicos</h2>
+
+        <h3>Repositorio Git</h3>
+        <p>Es la base de tu proyecto en Git. Es una carpeta que contiene todos tus archivos y la base de datos interna de Git (la carpeta <code>.git/</code> oculta) que rastrea el historial de cambios.</p>
+        <p>Puedes inicializar un nuevo repositorio en una carpeta existente:</p>
+        <pre><code>git init</code></pre>
+        <p>O clonar uno existente desde un servicio como GitHub:</p>
+         <pre><code>git clone [URL_del_repositorio]</code></pre>
+
+        <h3>Área de Preparación (Staging Area)</h3>
+        <p>Antes de guardar los cambios en un commit, primero los "preparas" o "stages". Es como una canasta donde pones los archivos que quieres incluir en tu próximo punto de guardado.</p>
+        <p>Usas <code>git add</code> para añadir cambios al área de preparación:</p>
+        <pre><code>git add nombre_del_archivo.html  # Agrega un archivo específico
+git add .                     # Agrega todos los cambios en la carpeta actual y subcarpetas</code></pre>
+
+        <h3>Commit</h3>
+        <p>Un commit es una "instantánea" oficial de tu proyecto en un momento dado. Es un punto en el historial al que puedes volver. Cada commit debe tener un mensaje descriptivo.</p>
+        <p>Usas <code>git commit</code> para guardar los cambios que están en el área de preparación:</p>
+        <pre><code>git commit -m "Mensaje descriptivo del commit"</code></pre>
+        <p>El mensaje debe ser conciso (primera línea) y puede tener un cuerpo más detallado después de una línea en blanco.</p>
+
+        <h3>Estado del Repositorio</h3>
+        <p>Conocer el estado de tu repositorio es fundamental. Te dice qué archivos han sido modificados, cuáles están en el área de preparación y cuáles no están siendo rastreados.</p>
+        <p>Usas <code>git status</code> para ver el estado:</p>
+        <pre><code>git status</code></pre>
+        <p>Te mostrará cosas como "Changes to be committed" (en staging), "Changes not staged for commit" (modificados pero no añadidos al staging) y "Untracked files" (archivos nuevos que Git aún no sigue).</p>
+
+        <p>Git es una herramienta muy poderosa. Dominar estos comandos básicos (`init`, `add`, `commit`, `status`) es el primer paso para gestionar tus proyectos de manera efectiva y prepararte para colaborar.</p>
+
+
+        <h3>Navegación</h3>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Volver a la Página Principal</a></li>
+                <li><a href="./pagina3.html">Ir a GitHub y Ramas</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ejemplo Git/GitHub. Contenido Educativo.</p>
+    </footer>
+
+</body>
+</html>

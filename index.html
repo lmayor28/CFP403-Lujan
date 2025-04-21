@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice Principal del Sitio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc); /* Degradado llamativo */
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh; /* Asegura que el degradado cubra toda la altura */
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+            color: #fff;
+            padding: 30px 0; /* Más padding */
+            text-align: center;
+            margin-bottom: 40px; /* Más espacio */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em; /* Título más grande */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra en el texto */
+        }
+
+        .container {
+            flex-grow: 1; /* Permite que el contenedor crezca y ocupe el espacio disponible */
+            width: 90%; /* Un poco más ancho */
+            max-width: 1100px; /* Ancho máximo */
+            margin: 20px auto; /* Margen superior/inferior */
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra */
+            border-radius: 10px;
+        }
+
+        h2 {
+             color: #333;
+             text-align: center;
+             margin-bottom: 30px;
+             border-bottom: 2px solid #eee;
+             padding-bottom: 10px;
+        }
+
+
+        /* Estilos para el GRID de enlaces */
+        .content-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+            gap: 20px; /* Espacio entre las tarjetas */
+            padding: 0;
+            list-style: none;
+        }
+
+        .link-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+            text-decoration: none; /* Importante para que todo el bloque sea un enlace */
+            color: #333; /* Color del texto */
+            display: block; /* Hace que la tarjeta sea un bloque */
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px); /* Efecto de levitación */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al pasar el ratón */
+            background-color: #e9e9e9; /* Fondo ligeramente más oscuro */
+        }
+
+        .link-card h3 {
+            margin-top: 0;
+            color: #007bff; /* Color para el título de la tarjeta */
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .link-card p {
+            margin-bottom: 0;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 30px;
+            color: #fff; /* Color blanco para el pie de página sobre el degradado */
+            font-size: 0.9em;
+            /* Considerar un background si el degradado lo hace ilegible */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Colección de Temas Web</h1>
+    </header>
+
+    <div class="container">
+        <h2>Selecciona un Tema para Explorar</h2>
+
+        <div class="content-links-grid">
+
+            <a href="./contenidos/git-basico.html" class="link-card">
+                <h3>Conceptos Básicos de Git</h3>
+                <p>Aprende qué es Git y los comandos esenciales como init, add, commit, status.</p>
+            </a>
+
+            <a href="./contenidos/github-ramas.html" class="link-card">
+                <h3>GitHub y Ramas (Branches)</h3>
+                <p>Entiende la diferencia entre Git y GitHub y cómo trabajar con ramas para colaborar.</p>
+            </a>
+
+            <a href="./contenidos/html-paths.html" class="link-card">
+                <h3>Rutas (Paths) en HTML</h3>
+                <p>Descubre cómo vincular archivos y recursos usando rutas relativas y absolutas.</p>
+            </a>
+
+            <a href="./contenidos/css-selectores.html" class="link-card">
+                <h3>Selectores CSS Fundamentales</h3>
+                <p>Conoce las herramientas básicas para elegir elementos y aplicarles estilos con CSS.</p>
+            </a>
+
+             <a href="./contenidos/js-dom-intro.html" class="link-card">
+                <h3>Intro a Manipulación del DOM con JS</h3>
+                <p>Empieza a modificar páginas web dinámicamente con JavaScript.</p>
+            </a>
+
+            <a href="./contenidos/git-ignore-file.html" class="link-card">
+                <h3>El Archivo .gitignore</h3>
+                <p>Aprende a decirle a Git qué archivos debe ignorar en tu proyecto.</p>
+            </a>
+
+        </div>
+        </div>
+
+    <footer>
+        <p>Explora y aprende. Todos los temas creados para este ejemplo.</p>
+    </footer>
+
+</body>
+</html>

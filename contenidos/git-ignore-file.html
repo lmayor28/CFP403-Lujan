@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Archivo .gitignore</title>
+     <style> /* PEGAR AQUÍ LOS ESTILOS CSS CONSISTENTES (body, header, .container, h2, h3, p, pre, code, nav, footer, etc.) */
+         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #e9f2f2; color: #333; line-height: 1.7; } /* Color de fondo diferente */
+        header { background-color: #fd7e14; color: #fff; padding: 25px 0; text-align: center; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); } /* Color diferente */
+        header h1 { margin: 0; font-size: 2.8em; }
+        .container { width: 85%; max-width: 960px; margin: auto; overflow: hidden; background-color: #fff; padding: 30px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.15); border-radius: 10px; }
+        .container h2, .container h3 { color: #444; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-top: 25px; }
+        .container p { margin-bottom: 15px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-left: 4px solid #fd7e14; overflow-x: auto; margin: 15px 0; } /* Borde que coincide */
+        code { font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 0.9em; }
+        pre code { display: block; }
+        nav ul { padding: 0; list-style: none; text-align: center; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
+        nav ul li { display: inline-block; margin: 0 20px; }
+        nav ul li a { text-decoration: none; color: #007bff; font-weight: bold; font-size: 1.1em; padding: 5px 0; transition: color 0.3s ease; }
+        nav ul li a:hover { color: #0056b3; text-decoration: underline; }
+        footer { text-align: center; padding: 25px 0; margin-top: 30px; color: #777; font-size: 0.9em; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Controlando Qué Ignorar con .gitignore</h1>
+    </header>
+
+    <div class="container">
+        <h2>¿Por qué usar .gitignore?</h2>
+        <p>En cualquier proyecto de desarrollo, hay archivos y carpetas que no quieres que Git rastree. Esto incluye:</p>
+        <ul>
+            <li>Archivos temporales generados por tu editor o sistema operativo (<code>.DS_Store</code>, archivos de copia de seguridad <code>.bak</code>).</li>
+            <li>Archivos generados automáticamente por procesos de compilación (<code>.class</code>, <code>.o</code>, <code>.pyc</code>).</li>
+            <li>Dependencias de proyecto descargadas (la carpeta <code>node_modules/</code> en Node.js, paquetes de Python, etc.).</li>
+            <li>Archivos de configuración local que contienen información sensible o específica de tu entorno (claves API, configuraciones de base de datos locales).</li>
+        </ul>
+        <p>El archivo <code>.gitignore</code> le indica a Git qué archivos y directorios debe ignorar. Es una parte importante de un repositorio limpio y colaborativo.</p>
+
+        <h2>Cómo Crear y Usar .gitignore</h2>
+        <p>Simplemente crea un archivo de texto llamado <code>.gitignore</code> en la **raíz de tu repositorio Git** (la carpeta principal de tu proyecto).</p>
+        <p>Dentro de este archivo, escribes patrones que coinciden con los archivos o carpetas que quieres ignorar.</p>
+
+        <h3>Patrones Comunes</h3>
+        <p>Cada línea en <code>.gitignore</code> es un patrón:</p>
+
+        <ul>
+            <li>**Ignorar archivos por extensión:**
+                <pre><code>*.log     # Ignora todos los archivos con extensión .log
+*.temp    # Ignora todos los archivos .temp
+*.bak     # Ignora todos los archivos .bak
+*.pyc     # Ignora archivos compilados de Python</code></pre>
+            </li>
+
+            <li>**Ignorar un archivo específico por nombre:**
+                <pre><code>mi-archivo-de-prueba.txt  # Ignora solo este archivo</code></pre>
+            </li>
+
+             <li>**Ignorar todos los archivos con un nombre específico en cualquier directorio:**
+                <pre><code>archivo-config.ini # Ignora cualquier archivo llamado archivo-config.ini</code></pre>
+            </li>
+
+             <li>**Ignorar una carpeta completa:** Agrega una barra <code>/</code> al final.
+                <pre><code>node_modules/  # Ignora la carpeta node_modules y todo su contenido
+build/         # Ignora la carpeta build y todo su contenido</code></pre>
+            </li>
+
+            <li>**Ignorar una carpeta específica en la raíz del repositorio:** Agrega una barra <code>/</code> al principio y al final.
+                 <pre><code>/temp/   # Ignora la carpeta 'temp' solo si está en la raíz</code></pre>
+            </li>
+
+            <li>**Ignorar un archivo con un nombre específico solo en la raíz:** Agrega una barra <code>/</code> al principio.
+                <pre><code>/.env    # Ignora el archivo .env solo si está en la raíz</code></pre>
+            </li>
+
+             <li>**Negar un patrón (no ignorar un archivo/carpeta que de otra forma sería ignorado):** Usa <code>!</code> al principio.
+                 <pre><code># Ignorar todos los archivos .log
+*.log
+# PERO, no ignores el archivo importante.log
+!importante.log</code></pre>
+            </li>
+        </ul>
+
+        <p>**Recuerda:**</p>
+        <ul>
+            <li>Las reglas de <code>.gitignore</code> solo afectan a los archivos que **no están siendo rastreados** por Git. Si ya agregaste y confirmaste un archivo, Git lo seguirá rastreando aunque luego lo añadas a <code>.gitignore</code>. Para que Git lo ignore, primero debes dejar de rastrearlo (usando <code>git rm --cached nombre_archivo</code>) y luego hacer un commit.</li>
+            <li>Debes añadir y confirmar el archivo <code>.gitignore</code> en sí mismo para que sus reglas se apliquen a otros colaboradores si compartes tu repositorio.</li>
+        </ul>
+        <p>Existen plantillas de <code>.gitignore</code> muy útiles en línea (por ejemplo, en GitHub) para diferentes lenguajes y frameworks que puedes usar como punto de partida.</p>
+
+
+        <h3>Navegación</h3>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Volver al Índice Principal</a></li>
+                 </ul>
+        </nav>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ejemplo de .gitignore. Contenido Educativo.</p>
+    </footer>
+
+</body>
+</html>
