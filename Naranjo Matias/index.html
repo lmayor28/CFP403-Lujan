@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende con Nosotros</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #7579ff, #b224ef);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3.5em;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            flex-grow: 1;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+        }
+
+        h2 {
+            color: #7579ff;
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .content-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .link-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+
+        .link-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background-color: #f5f5f5;
+        }
+
+        .link-card h3 {
+            margin-top: 0;
+            color: #7579ff;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .link-card p {
+            margin-bottom: 0;
+            font-size: 1em;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            color: #fff;
+            font-size: 1em;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Colección de Temas Web</h1>
+        </header>
+    
+        <div class="container">
+            <h2>Selecciona un Tema para Explorar</h2>
+    
+            <div class="content-links-grid">
+    
+                <a href="./contenidos/git-basico.html" class="link-card">
+                    <h3>Conceptos Básicos de Git</h3>
+                    <p>Aprende qué es Git y los comandos esenciales como init, add, commit, status.</p>
+                </a>
+    
+                <a href="./contenidos/github-ramas.html" class="link-card">
+                    <h3>GitHub y Ramas (Branches)</h3>
+                    <p>Entiende la diferencia entre Git y GitHub y cómo trabajar con ramas para colaborar.</p>
+                </a>
+    
+                <a href="./contenidos/html-paths.html" class="link-card">
+                    <h3>Rutas (Paths) en HTML</h3>
+                    <p>Descubre cómo vincular archivos y recursos usando rutas relativas y absolutas.</p>
+                </a>
+    
+                <a href="./contenidos/css-selectores.html" class="link-card">
+                    <h3>Selectores CSS Fundamentales</h3>
+                    <p>Conoce las herramientas básicas para elegir elementos y aplicarles estilos con CSS.</p>
+                </a>
+    
+                 <a href="./contenidos/js-dom-intro.html" class="link-card">
+                    <h3>Intro a Manipulación del DOM con JS</h3>
+                    <p>Empieza a modificar páginas web dinámicamente con JavaScript.</p>
+                </a>
+    
+                <a href="./contenidos/git-ignore-file.html" class="link-card">
+                    <h3>El Archivo .gitignore</h3>
+                    <p>Aprende a decirle a Git qué archivos debe ignorar en tu proyecto.</p>
+                </a>
+    
+            </div>
+            </div>
+    
+        <footer>
+            <p>Explora y aprende. Todos los temas creados para este ejemplo.</p>
+        </footer>
+    
+    </body>
+    </html>
