@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es"> 
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+    </body>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(to right, #6a11cb, #2575fc); /* Degradado llamativo */
+                color: #333;
+                line-height: 1.6;
+                min-height: 100vh; /* Asegura que el degradado cubra toda la altura */
+                display: flex;
+                flex-direction: column;
+            }
+
+            header {
+                background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+                color: #fff;
+                padding: 30px 0; /* Más padding */
+                text-align: center;
+                margin-bottom: 40px; /* Más espacio */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+            }
+
+            header h1 {
+                margin: 0;
+                font-size: 3em; /* Título más grande */
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra en el texto */
+            }
+
+            .container {
+                flex-grow: 1; /* Permite que el contenedor crezca y ocupe el espacio disponible */
+                width: 90%; /* Un poco más ancho */
+                max-width: 1100px; /* Ancho máximo */
+                margin: 20px auto; /* Margen superior/inferior */
+                background-color: #fff;
+                padding: 30px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra */
+                border-radius: 10px;
+            }
+
+h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+}
+
+
+            /* Estilos para el GRID de enlaces */
+            .content-links-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+                gap: 20px; /* Espacio entre los elementos del grid */
+            }
+</html>
