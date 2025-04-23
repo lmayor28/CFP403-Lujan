@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: aqua;
+}
+nav{
+    border : 2px solid black;
+    margin: 50px;
+    padding: 5px;
+    background-color: rgb(74, 61, 87);
+}
+nav ul{
+    display:flex;
+    justify-content: center;
+    list-style: none;
+    color: aliceblue;
+}
+li{
+    margin: 10px;
+}
+h1{
+    margin: 50px;
+}
+main section ul{
+    background-color: rgb(74, 61, 87);
+    margin: 50px;
+    color: rgb(141, 149, 224);
+
+}
+@keyframe cambiar-color{
+    0%{
+        transform: translateX(0pxc)
+        background
+    }
+}
+caja-animacion{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    animation:cambiar-color 2s infinite case-in-out;
+}
