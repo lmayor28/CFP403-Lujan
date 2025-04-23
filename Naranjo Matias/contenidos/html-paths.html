@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entendiendo las Rutas (Paths) en HTML</title>
+    <style>
+        /* Estilos generales del cuerpo */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9e9e9;
+            color: #333;
+            line-height: 1.7; /* Aumenta la legibilidad del texto */
+        }
+
+        /* Estilos para el encabezado principal */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 25px 0; /* Más padding */
+            text-align: center;
+            margin-bottom: 30px; /* Más espacio después del encabezado */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em; /* Letra más grande */
+        }
+
+        /* Estilos para el contenedor principal del contenido */
+        .container {
+            width: 85%; /* Un poco más ancho */
+            max-width: 960px; /* Ancho máximo para pantallas grandes */
+            margin: auto;
+            overflow: hidden;
+            background-color: #fff;
+            padding: 30px; /* Más padding interno */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+            border-radius: 10px; /* Bordes más redondeados */
+        }
+
+        .container h2, .container h3 {
+            color: #555;
+            border-bottom: 1px solid #eee; /* Línea separadora para títulos */
+            padding-bottom: 8px;
+            margin-top: 25px;
+        }
+
+        .container p {
+            margin-bottom: 15px;
+        }
+
+        /* Estilos para bloques de código */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-left: 4px solid #555;
+            overflow-x: auto; /* Añade scroll si el código es muy largo */
+            margin: 15px 0;
+        }
+
+        code {
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            font-size: 0.9em;
+        }
+
+        pre code {
+            display: block; /* Asegura que el código dentro de pre ocupe su propio bloque */
+        }
+
+
+        /* Estilos para la navegación */
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            margin-top: 30px; /* Más espacio */
+            border-top: 1px solid #eee; /* Línea separadora */
+            padding-top: 20px;
+        }
+
+        nav ul li {
+            display: inline-block; /* Usamos inline-block para mejor control */
+            margin: 0 20px; /* Más espacio entre enlaces */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #007bff; /* Azul primario */
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 5px 0; /* Añade un poco de padding vertical */
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #0056b3; /* Azul más oscuro al pasar el ratón */
+            text-decoration: underline;
+        }
+
+        /* Estilos para el pie de página */
+        footer {
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9em;
+            border-top: 1px solid #eee; /* Línea separadora */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Guía para Entender Rutas (Paths) en HTML</h1>
+    </header>
+
+    <div class="container">
+        <h2>¿Qué es una Ruta (Path)?</h2>
+        <p>En desarrollo web, una "ruta" o "path" es la dirección que especifica la ubicación de un archivo (una página HTML, una imagen, un archivo CSS, un script de JavaScript, etc.) dentro de la estructura de carpetas de un sitio web o sistema de archivos.</p>
+        <p>Cuando creas enlaces (`&lt;a href="..."&gt;`), insertas imágenes (`&lt;img src="..."&gt;`), vinculas hojas de estilo (`&lt;link href="..."&gt;`) o scripts (`&lt;script src="..."&gt;`), necesitas usar rutas para decirle al navegador dónde encontrar esos recursos.</p>
+
+        <h2>Tipos de Rutas</h2>
+
+        <h3>Rutas Absolutas</h3>
+        <p>Una ruta absoluta proporciona la ubicación completa y exacta de un archivo, independientemente de dónde se encuentre el archivo actual que la contiene. Son como direcciones postales completas.</p>
+        <p>Se usan principalmente para:</p>
+        <ul>
+            <li>Vincular a recursos en **otros sitios web** en internet. Comienzan con el protocolo (<code>http://</code>, <code>https://</code>).</li>
+            <li>Referenciar archivos desde la **raíz del sitio web** (ver rutas relativas con `/`).</li>
+        </ul>
+        <p>Ejemplo de ruta absoluta a un sitio externo:</p>
+        <pre><code>&lt;a href="https://www.google.com"&gt;Ir a Google&lt;/a&gt;</code></pre>
+        <p>Ejemplo de ruta absoluta a una imagen alojada en otro servidor:</p>
+        <pre><code>&lt;img src="https://www.ejemplo-externo.com/images/logo.png" alt="Logo Externo"&gt;</code></pre>
+
+        <h3>Rutas Relativas</h3>
+        <p>Una ruta relativa especifica la ubicación de un archivo **en relación con la ubicación del archivo HTML actual** que la contiene. Son muy útiles para vincular archivos dentro de tu propio proyecto porque funcionan sin importar en qué dominio o carpeta de tu computadora esté el proyecto, siempre que la estructura interna se mantenga.</p>
+
+        <h4><code>./</code> (Punto Barra) - Directorio Actual</h4>
+        <p>El símbolo <code>./</code> se refiere al **directorio (carpeta) actual** donde se encuentra el archivo HTML desde el que estás creando el enlace o referencia.</p>
+        <p>Es la forma más simple de vincular a otro archivo que está en la **misma carpeta** que el archivo actual.</p>
+        <p><strong>Ejemplo basado en tus archivos:</strong></p>
+        <p>Si tienes:</p>
+        <pre><code>- mi-proyecto/
+  - index.html    &lt;-- Estás aquí
+  - pagina2.html
+  - pagina3.html
+  - style.css
+  - logo.png</code></pre>
+        <p>Desde <code>index.html</code>, para vincular a <code>pagina2.html</code> (que está en la misma carpeta), usas:</p>
+        <pre><code>&lt;a href="./pagina2.html"&gt;Ir a Página 2&lt;/a&gt;</code></pre>
+        <p>Para vincular al archivo CSS o una imagen en la misma carpeta:</p>
+        <pre><code>&lt;link rel="stylesheet" href="./style.css"&gt;
+&lt;img src="./logo.png" alt="Mi Logo"&gt;</code></pre>
+        <p>Aunque a menudo puedes omitir el <code>./</code> (<code>href="pagina2.html"</code> también funciona si están en el mismo nivel), usarlo es más explícito y claro para entender que la ruta es relativa al directorio actual.</p>
+
+
+        <h4><code>../</code> (Punto Punto Barra) - Directorio Padre</h4>
+        <p>El símbolo <code>../</code> significa "subir **un nivel** en la estructura de directorios" (ir a la carpeta inmediatamente superior o "padre" de la carpeta actual).</p>
+        <p>Lo usas para salir de la carpeta actual y acceder a archivos o carpetas que están "por encima" o en una rama diferente del árbol de directorios.</p>
+        <p><strong>Ejemplo:</strong></p>
+        <p>Si tuvieras esta estructura:</p>
+        <pre><code>- mi-proyecto/
+  - paginas/
+    - index.html    &lt;-- Estás aquí
+    - pagina2.html
+  - css/
+    - estilos.css
+  - images/
+    - logo.png
+  - sobre.html</code></pre>
+        <p>Desde <code>paginas/index.html</code>:</p>
+        <ul>
+            <li>Para ir a <code>sobre.html</code> (que está en la carpeta principal <code>mi-proyecto/</code>):
+                <pre><code>&lt;a href="../sobre.html"&gt;Sobre Nosotros&lt;/a&gt;</code></pre>
+                (Subes un nivel de <code>paginas/</code> a <code>mi-proyecto/</code>, y ahí encuentras <code>sobre.html</code>)</li>
+            <li>Para vincular a <code>estilos.css</code> (dentro de la carpeta <code>css/</code> en el nivel superior):
+                 <pre><code>&lt;link rel="stylesheet" href="../css/estilos.css"&gt;</code></pre>
+                 (Subes un nivel a <code>mi-proyecto/</code>, luego entras en la carpeta <code>css/</code>, y ahí encuentras <code>estilos.css</code>)</li>
+             <li>Para vincular a <code>logo.png</code> (dentro de la carpeta <code>images/</code> en el nivel superior):
+                  <pre><code>&lt;img src="../images/logo.png" alt="Logo del Sitio"&gt;</code></pre>
+                  (Subes un nivel a <code>mi-proyecto/</code>, luego entras en la carpeta <code>images/</code>, y ahí encuentras <code>logo.png</code>)</li>
+        </ul>
+        <p>Puedes encadenar <code>../</code> para subir múltiples niveles (ej: <code>../../</code> sube dos niveles).</p>
+
+        <h4><code>/</code> (Barra al principio) - Raíz del Sitio Web (Contexto Web)</h4>
+        <p>Cuando una ruta relativa comienza con una barra <code>/</code> (sin un punto antes), no se refiere a la raíz de tu sistema de archivos, sino a la **raíz del sitio web** o dominio desde el que se está sirviendo la página.</p>
+        <p>Es útil para referenciar archivos que sabes que siempre estarán en un lugar fijo con respecto a la raíz de tu sitio (por ejemplo, una carpeta <code>css</code> o <code>js</code> en la raíz).</p>
+        <p><strong>Ejemplo (asumiendo que la carpeta `mi-proyecto` es la raíz de tu sitio web):</strong></p>
+         <pre><code>- mi-proyecto/ &lt;-- Raíz del sitio ( / )
+  - index.html
+  - paginas/
+    - contacto.html  &lt;-- Estás aquí (ruta relativa paginas/contacto.html)
+  - css/
+    - style.css      &lt;-- Ruta relativa css/style.css
+  - js/
+    - script.js      &lt;-- Ruta relativa js/script.js</code></pre>
+        <p>Desde cualquier archivo (como `contacto.html` dentro de `paginas/`), para vincular a `style.css` o `script.js` usando rutas relativas a la raíz del sitio:</p>
+        <pre><code>&lt;link rel="stylesheet" href="/css/style.css"&gt;  &lt;-- Siempre busca css/style.css desde la raíz del sitio
+&lt;script src="/js/script.js"&gt;&lt;/script&gt;         &lt;-- Siempre busca js/script.js desde la raíz del sitio</code></pre>
+        <p>Esto es útil porque la ruta `/css/style.css` funciona sin importar si estás en `index.html` (raíz) o en `paginas/contacto.html` (subcarpeta).</p>
+
+
+        <h2>Resumen</h2>
+        <ul>
+            <li>**Ruta Absoluta:** Dirección completa, principalmente para enlaces externos (<code>http://...</code>).</li>
+            <li>**Ruta Relativa (<code>./</code>):** En la misma carpeta que el archivo actual.</li>
+            <li>**Ruta Relativa (<code>../</code>):** Subir un nivel de carpeta.</li>
+            <li>**Ruta Relativa (<code>/</code> al principio):** Desde la raíz del sitio web (en contexto web).</li>
+        </ul>
+
+        <p>Entender y usar correctamente las rutas relativas es clave para construir sitios web navegables y portátiles.</p>
+
+
+        <h3>Navegación a las Otras Páginas de Ejemplo</h3>
+        <p>Estos enlaces usan la ruta relativa <code>./</code> porque <code>pagina2.html</code> y <code>pagina3.html</code> están en la misma carpeta que este archivo <code>index.html</code>:</p>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html">Indice</a></li>
+                <li><a href="./pagina3.html">Ir a Página 3 de Ejemplo</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 Guía de Rutas HTML. Ejemplo educativo.</p>
+    </footer>
+
+</body>
+</html>
