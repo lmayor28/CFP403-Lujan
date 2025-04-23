@@ -22,22 +22,44 @@ li{
 }
 h1{
     margin: 50px;
+    display:flex;
+    text-align: center;
+    align-self: center;
+
+    
 }
-main section ul{
+main section nav{
     background-color: rgb(74, 61, 87);
     margin: 50px;
-    color: rgb(141, 149, 224);
+    padding: 10px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 
 }
-@keyframe cambiar-color{
-    0%{
-        transform: translateX(0pxc)
-        background
-    }
+a{
+    color: white;
+    margin: 100px;
 }
-caja-animacion{
-    width: 100px;
-    height: 100px;
+@keyframes cambiar-color{
+    0%{
+        transform: translateX(0);
+        background-color: white;
+     }
+    50%{
+        transform:translateX(100px);
+        background-color:burlywood;
+    }
+    100%{
+        transform:translateX(0);
+        background-color:white;
+    }
+
+}
+
+.caja-animacion{
+    width: 50%;
+    height: 100%;
     background-color: green;
-    animation:cambiar-color 2s infinite case-in-out;
+    animation:cambiar-color 2s infinite ease-in-out;
 }
