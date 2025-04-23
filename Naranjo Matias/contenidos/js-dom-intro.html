@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a la Manipulación del DOM con JS</title>
+     <style> /* PEGAR AQUÍ LOS ESTILOS CSS CONSISTENTES (body, header, .container, h2, h3, p, pre, code, nav, footer, etc.) */
+         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #e9edf2; color: #333; line-height: 1.7; } /* Color de fondo diferente */
+        header { background-color: #fd7e14; color: #fff; padding: 25px 0; text-align: center; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); } /* Color diferente */
+        header h1 { margin: 0; font-size: 2.8em; }
+        .container { width: 85%; max-width: 960px; margin: auto; overflow: hidden; background-color: #fff; padding: 30px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.15); border-radius: 10px; }
+        .container h2, .container h3 { color: #444; border-bottom: 1px solid #eee; padding-bottom: 8px; margin-top: 25px; }
+        .container p { margin-bottom: 15px; }
+        pre { background-color: #f4f4f4; padding: 10px; border-left: 4px solid #fd7e14; overflow-x: auto; margin: 15px 0; } /* Borde que coincide */
+        code { font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 0.9em; }
+        pre code { display: block; }
+        nav ul { padding: 0; list-style: none; text-align: center; margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; }
+        nav ul li { display: inline-block; margin: 0 20px; }
+        nav ul li a { text-decoration: none; color: #007bff; font-weight: bold; font-size: 1.1em; padding: 5px 0; transition: color 0.3s ease; }
+        nav ul li a:hover { color: #0056b3; text-decoration: underline; }
+        footer { text-align: center; padding: 25px 0; margin-top: 30px; color: #777; font-size: 0.9em; border-top: 1px solid #eee; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Intro a la Manipulación del DOM con JavaScript</h1>
+    </header>
+
+    <div class="container">
+        <h2>¿Qué es el DOM?</h2>
+        <p>El **DOM (Document Object Model)** es una interfaz de programación para documentos HTML, XML y SVG. Representa la página como una estructura de árbol donde cada nodo es un objeto (un elemento HTML, un atributo, un texto, etc.).</p>
+        <p>JavaScript puede usar el DOM para **acceder y modificar** el contenido, la estructura y los estilos de una página web después de que se ha cargado en el navegador. Esto es lo que hace que las páginas web sean interactivas y dinámicas.</p>
+
+        <h3>Seleccionar Elementos (La Base)</h3>
+        <p>Antes de modificar algo, necesitas seleccionar el elemento HTML que te interesa.</p>
+        <ul>
+            <li>Seleccionar por ID (si el elemento tiene un atributo <code>id</code> único):</li>
+            <pre><code>const miElemento = document.getElementById('miId');</code></pre>
+            <li>Seleccionar el primer elemento que coincide con un selector CSS (más flexible):</li>
+            <pre><code>const primerParrafo = document.querySelector('p');
+const primerElementoConClase = document.querySelector('.miClase');</code></pre>
+            <li>Seleccionar TODOS los elementos que coinciden con un selector CSS (devuelve una lista - NodeList):</li>
+            <pre><code>const todosLosParrafos = document.querySelectorAll('p');
+const todosLosElementosConClase = document.querySelectorAll('.miClase');</code></pre>
+        </ul>
+
+        <h3>Modificar Contenido</h3>
+        <p>Una vez que tienes una referencia a un elemento, puedes cambiar su contenido.</p>
+        <ul>
+            <li>Cambiar el texto (ignora etiquetas HTML dentro):</li>
+            <pre><code>miElemento.innerText = 'Nuevo texto simple';</code></pre>
+             <pre><code>miElemento.textContent = 'Otro nuevo texto simple';</code></pre>
+            <li>Cambiar el contenido HTML (puede incluir etiquetas HTML):</li>
+            <pre><code>miElemento.innerHTML = '&lt;strong&gt;Texto en negrita&lt;/strong&gt; y más';</code></pre>
+            <p class="caution">¡Cuidado con <code>innerHTML</code>! No insertes texto directamente desde entradas de usuario sin validación por seguridad.</p>
+        </ul>
+
+        <h3>Modificar Atributos</h3>
+        <p>Cambiar atributos como <code>src</code>, <code>href</code>, <code>class</code>, etc.</p>
+         <pre><code>const imagen = document.getElementById('miImagen');
+imagen.src = 'nueva-imagen.jpg';
+imagen.setAttribute('alt', 'Nueva descripción');
+imagen.classList.add('borde-rojo'); // Añade una clase CSS</code></pre>
+
+        <h3>Modificar Estilos (CSS)</h3>
+        <p>Cambiar propiedades CSS directamente. Las propiedades con guiones (`background-color`) se escriben en camelCase (`backgroundColor`).</p>
+         <pre><code>miElemento.style.color = 'red';
+miElemento.style.backgroundColor = 'yellow';
+miElemento.style.display = 'none'; // Oculta el elemento</code></pre>
+        <p>Aunque es posible, para cambios de estilo complejos o múltiples, es mejor añadir/eliminar/alternar clases CSS (usando <code>classList</code>) en lugar de modificar muchos estilos individualmente.</p>
+
+        <p>Estos son solo los primeros pasos en la manipulación del DOM con JavaScript. La combinación de seleccionar elementos y modificar sus propiedades (`innerText`, `innerHTML`, atributos, `style`) te abre un mundo de posibilidades para hacer tus páginas dinámicas.</p>
+
+
+        <h3>Navegación</h3>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Volver al Índice Principal</a></li>
+                </ul>
+        </nav>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ejemplo de DOM con JS. Contenido Educativo.</p>
+    </footer>
+
+</body>
+</html>
