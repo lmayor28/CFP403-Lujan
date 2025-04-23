@@ -1,0 +1,99 @@
+/* VARIABLES */
+
+:root {
+    --azul: #030381;
+    --rojo: #ac2d2d;
+    --amarillo: #bdba61;
+}
+
+/* GLOBALES */
+html {
+    /* 1rem = 10px */
+    font-size: 62.5%;
+ }
+  body {
+    font-size: 1.6rem;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}  
+
+/* HEADER---------------------------------------------------------------- */
+
+header {
+    display: flex;
+    justify-content: space-around;
+}
+
+header p {
+    display: inline-block;
+    text-align: center;
+}
+
+header nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+header img {
+    height: 100px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #aaaaaa;
+}
+
+nav a:hover {
+    color: var(--azul);
+    animation: cambiar-color 0.3s ease-in-out;
+}
+
+/* bg-imagen */
+
+.bg-image {
+    background-image: url(img/imagencentrowebp.webp);
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.difuminado {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    
+}
+
+h1 {
+    margin-top:10rem;
+    text-align: center;
+    color: #fff;
+    font-size: 4rem;
+}
+
+.difuminado h2 {
+    color: #fff;
+    text-align: center;
+}
+
+/* CURSOS */
+
+h2 {
+    text-align: center;
+}
+
+/* INSCRIPCION */
+
+.inscripcion h2 {
+    padding: 2rem;
+}
+.inscripcion {
+    background-color: #000;
+    color: #fff;
+}
