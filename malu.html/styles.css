@@ -21,6 +21,13 @@ body::before {
     z-index: -1; /* para que quede al fondo */
 }
 
+.navbar {
+    display: flex;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+}
+
 
 .navbar {
     background-color: #333;
@@ -100,17 +107,8 @@ header {
     margin-top: 20px;
 }
 
-main {
-display: flex;
-}
 
-img{
-width: 25%;
-padding: 20px;
-height: auto;
-border-radius: 10px;
-    
-}
+
 #titulo2 {
     font-size: 35px;
     text-align: left;
@@ -139,3 +137,17 @@ footer:hover {
     padding: 10px;
 }
 
+.carousel-item{
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: flex;
+}
+
+div img {
+    width: auto;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 20px 0;
+}
