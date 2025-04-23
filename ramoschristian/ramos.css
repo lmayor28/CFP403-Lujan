@@ -22,29 +22,37 @@ li{
 }
 h1{
     margin: 50px;
-    display:flex
+    display:flex;
+    text-align: center;
+    align-self: center;
+
+    
 }
-main section ul{
+main section nav{
     background-color: rgb(74, 61, 87);
     margin: 50px;
     padding: 10px;
-    color: rgb(141, 149, 224);
-
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 
 }
-
+a{
+    color: white;
+    margin: 100px;
+}
 @keyframes cambiar-color{
     0%{
         transform: translateX(0);
-        background-color: green;
+        background-color: white;
      }
     50%{
         transform:translateX(100px);
-        background-color:blue;
+        background-color:burlywood;
     }
     100%{
-        transform:translateX(0px);
-        background-color:green;
+        transform:translateX(0);
+        background-color:white;
     }
 
 }
