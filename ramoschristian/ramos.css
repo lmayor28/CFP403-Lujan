@@ -1,0 +1,65 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: aqua;
+}
+nav{
+    border : 2px solid black;
+    margin: 50px;
+    padding: 5px;
+    background-color: rgb(74, 61, 87);
+}
+nav ul{
+    display:flex;
+    justify-content: center;
+    list-style: none;
+    color: aliceblue;
+}
+li{
+    margin: 10px;
+}
+h1{
+    margin: 50px;
+    display:flex;
+    text-align: center;
+    align-self: center;
+
+    
+}
+main section nav{
+    background-color: rgb(74, 61, 87);
+    margin: 50px;
+    padding: 10px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+}
+a{
+    color: white;
+    margin: 100px;
+}
+@keyframes cambiar-color{
+    0%{
+        transform: translateX(0);
+        background-color: white;
+     }
+    50%{
+        transform:translateX(100px);
+        background-color:burlywood;
+    }
+    100%{
+        transform:translateX(0);
+        background-color:white;
+    }
+
+}
+
+.caja-animacion{
+    width: 50%;
+    height: 100%;
+    background-color: green;
+    animation:cambiar-color 2s infinite ease-in-out;
+}
