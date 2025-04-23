@@ -29,3 +29,15 @@ main section ul{
     color: rgb(141, 149, 224);
 
 }
+@keyframe cambiar-color{
+    0%{
+        transform: translateX(0pxc)
+        background
+    }
+}
+caja-animacion{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    animation:cambiar-color 2s infinite case-in-out;
+}
