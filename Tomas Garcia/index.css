@@ -13,6 +13,9 @@ html {
  }
   body {
     font-size: 1.6rem;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }  
 
 /* HEADER---------------------------------------------------------------- */
@@ -35,6 +38,17 @@ header nav {
 
 header img {
     height: 100px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #aaaaaa;
+}
+
+nav a:hover {
+    color: var(--azul);
+    animation: cambiar-color 0.3s ease-in-out;
 }
 
 /* bg-imagen */
@@ -68,4 +82,18 @@ h1 {
     text-align: center;
 }
 
-/* */
+/* CURSOS */
+
+h2 {
+    text-align: center;
+}
+
+/* INSCRIPCION */
+
+.inscripcion h2 {
+    padding: 2rem;
+}
+.inscripcion {
+    background-color: #000;
+    color: #fff;
+}
