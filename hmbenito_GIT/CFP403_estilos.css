@@ -1,0 +1,181 @@
+header {
+    flex: content;
+    background-color: #9668b0;
+    color: white;
+    padding: 10px;
+    text-align:center;
+    vertical-align: top;
+}
+#Section_principal {
+    background-image:url(imagenes/insignia/CFP403_foto.jpg); 
+    height: 700px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    }
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+li{
+    list-style: none;
+    margin: 0 15px;
+    display: inline-flex;
+}
+
+.container {
+    flex: grow 1; /* Permite que el contenedor crezca y ocupe el espacio disponible */
+    width: 90%; /* Un poco más ancho */
+    max-width: 1100px; /* Ancho máximo */
+    margin: 20px auto; /* Margen superior/inferior */
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra */
+    border-radius: 10px;
+    position: relative; /* Para el posicionamiento absoluto de los elementos dentro */
+    display: flex; /* Flexbox para alinear los elementos */
+}
+.link-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    text-decoration: none; /* Importante para que todo el bloque sea un enlace */
+    color: #333; /* Color del texto */
+    display: block; /* Hace que la tarjeta sea un bloque */
+}
+@keyframes desplazar-cambiar-color {
+    0% {transform: translateX(0px); 
+        background-color:greenyellow; }
+    50% {transform: translateX(10px); 
+        background-color:blue; }
+    100% {transform: translateX(0px); 
+        background-color: greenyellow; }
+}
+.link-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Desplazamiento hacia arriba */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    animation: desplazar-cambiar-color 2s; /* Animación al pasar el ratón */
+
+}
+
+.link-card{
+    width: 150px;
+    height: auto;
+    position: relative;
+    padding-left: 5px;
+    
+}
+.content-links-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Cambia el tamaño mínimo según sea necesario */
+    gap: 10px; /* Espacio entre los enlaces */
+    margin-top: 20px; /* Espacio superior */
+    padding: 0 10px; /* Espacio lateral */
+}
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333; /* Color del texto */
+}
+
+
+
+
+
+.carousel {flex:content
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow:visible;
+    border-radius: 10px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+.Contenedores_Horizontales {
+    display: flex;
+    font-size: 14px;
+    text-align: center;
+}
+
+/*style animaciones  */
+@keyframes cambiar-color {
+    0% {transform: translateX(0px); 
+        background-color:greenyellow; }
+    50% {transform: translateX(100px); 
+        background-color:blue; }
+    100% {transform: translateX(0px); 
+        background-color: greenyellow; }
+}
+.Pre-Inscripcion{ 
+    flex: grow 1; /* Permite que el contenedor crezca y ocupe el espacio disponible */
+    width: 100%; /* Un poco más ancho */
+    max-width: 1100px; /* Ancho máximo */
+    margin: 20px auto; /* Margen superior/inferior */
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra */
+    border-radius: 10px;
+    position:relative; /* Para el posicionamiento absoluto de los elementos dentro */
+    display: flex; /* Flexbox para alinear los elementos */
+
+}
+
+.caja-animacion{
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    animation: cambiar-color 2s infinite;
+    animation-direction: alternate;  
+
+}
+
+
+/* fin animaciones */
