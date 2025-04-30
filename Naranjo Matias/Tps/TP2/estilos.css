@@ -1,0 +1,198 @@
+body{
+    background-color: lightgray;
+    
+}
+
+div{
+    background-color: lightgray;
+    border: 2px solid black;
+    margin: 5px;
+   
+}
+
+nav {
+      background-color: slateblue;
+      
+      
+    }
+
+ nav ul {
+    display: flex;
+    justify-content: center;
+    
+   }
+
+ nav li {
+    list-style: none;
+     margin: 10px;
+    
+}
+
+li {padding: 4px;
+    font-size: smaller;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1 { 
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+  
+header p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+main {
+    font-family: Arial, Helvetica, sans-serif;
+    
+    
+}
+
+main p { font-size: smaller;
+    
+    
+}
+ section div:hover{
+    background-color: red;
+}
+section div {
+    background-color: lightblue;
+    text-align: left;
+    margin: 7px;
+    flex: 1;
+
+
+    
+}
+
+section { display: flex;
+  
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 85%;
+    margin: 15px 0;
+    background-color: white;
+  }
+  
+  th {
+    background-color: slateblue;
+    color: white;
+    padding: 10px 8px;
+    border: 1px solid #ccc;
+  }
+  
+  td {
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+    
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+form{
+    display: flex;
+  flex-direction: column;
+  width: 70%;
+  background-color: lightgray;
+ 
+  
+}
+form div{
+    border: 1px solid gray;
+}
+
+label {
+    padding: 10px;
+    font-weight: bold;
+   
+    
+}
+
+input  {
+    padding: 8px;
+    background-color: honeydew;
+
+    
+    
+}
+
+
+
+select{
+    padding: 8px;
+}
+
+form button {
+    background-color: slateblue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 3%;
+  }
+
+  form button:hover {
+    background-color: slategray;
+  }
+
+  footer {
+    text-align: center;
+    background-color: slateblue;
+    margin-top: 30px;
+    padding: 25px 20px;
+    color: white;
+    
+  }
+  
+  footer p {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+  
+  footer strong {
+    letter-spacing: 0.5px;
+  }
+
+
+  nav {
+    background-color: slateblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Añade sombra para destacarlo */
+  }
+  
+  /* Para que el contenido no quede detrás del menú fijo */
+  body {
+    background-color: lightgray;
+    padding-top: 60px; /* Ajusta este valor según la altura de tu menú */
+  }
+  
+  /* Para hacer el scroll suave cuando se hace clic en los enlaces */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Efecto de transición al interactuar con los enlaces */
+  nav a:hover {
+    color: #ffcc00; /* Cambia el color al pasar el mouse */
+    transition: color 0.3s ease;
+  }

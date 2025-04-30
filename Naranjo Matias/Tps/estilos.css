@@ -1,0 +1,61 @@
+ .section1 p {
+    color:chocolate; 
+    font-size: 19px;
+    background-color:black; 
+    border: 2px,solid,greenyellow ; 
+    margin: 40px; padding: 50px; 
+    text-align: center;
+} 
+ h1 {
+    text-align: center; 
+    font-size: 40px;
+    font-family: Boldonse;
+
+ }
+
+ nav ul{
+    justify-content: center;
+    display: flex;
+}
+
+ li{
+    margin: 40px;
+    
+ }
+ 
+ .section2{
+    color: blueviolet; 
+    font-size: 20px; 
+    background-color:red;
+    margin: 25px;
+
+}
+
+div h4{color:black;
+      text-align: right;
+      background-color: white;
+    }
+      
+div p{background-color: white;
+     text-align: center;
+     
+    }
+
+div a{text-align: right; color: yellow;
+    
+}
+
+div {border: 2px,solid,blue;
+
+}
+
+P {font-family: Tektur ;
+
+}
+
+body {
+   background-color: aqua ;
+   BACK
+}
+
+

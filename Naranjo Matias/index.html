@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende con Nosotros</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #7579ff, #b224ef);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    color: #fff;
+    padding: 0px 0; /* Más padding */
+    text-align: center;
+    margin-bottom: 5px; /* Más espacio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em; /* Título más grande */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra en el texto */
+    margin-left: 3px; /* Espacio entre la imagen y el título */
+}
+
+header img {
+    max-width: 200px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    margin-right: 30px; /* Espacio entre la imagen y el título */
+    margin-top: 60px;
+}
+.container {
+    flex-grow: 1;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+h2 {
+    color: #7579ff;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+
+
+
+
+.content-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0;
+    list-style: none;
+}
+
+.link-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.link-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f5f5f5;
+}
+
+.link-card h3 {
+    margin-top: 0;
+    color: #7579ff;
+    font-size: 1.5em;
+    font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .link-card p {
+            margin-bottom: 0;
+            font-size: 1em;
+            color: #555;
+        }
+
+        footer {
+            background-image: url('grupocfp.jpg'); /* Ruta de la imagen */
+           background-size: cover; /* Ajusta la imagen para cubrir el fondo */
+           background-position: center; /* Centra la imagen */
+           background-repeat: repeat; /* Evita que se repita */
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            color:lavenderblush;
+
+            font-size: 1em;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icons {
+    margin-left: auto;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons {
+    position: absolute;
+    top: 20px; /* Ajusta según lo necesites */
+    right: 20px; /* Alinea al margen derecho */
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 30px;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffd700; /* Color al pasar el mouse */
+}
+
+       
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="/Naranjo Matias/Logocfp.png" alt="Logo">
+        <h1>Centro de Formación Profesional n° 403</h1>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/CFP403LUJAN/?locale=es_LA" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/cfp403lujan/?hl=es" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/542323643809" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+
+        </header>
+    
+        <div class="container">
+            <h2>Cursos Gratuitos -Lavalle 740- LUJAN</h2>
+    
+            <div class="content-links-grid">
+    
+                <a href="./contenidos/inscripcion.html" class="link-card">
+                    <h3>Como Inscribirte</h3>
+                    <p>Inscribite a los cursos que se dictan en el centro de formacion certificados por Instituto Provincial de Formación Laboral</p>
+                </a>
+    
+                <a href="./contenidos/cursos.html" class="link-card">
+                    <h3> Cursos</h3>
+                    <p>Listado de cursos que dictamos en el CFP N°403.</p>
+                </a>
+    
+                <a href="./contenidos/html-paths.html" class="link-card">
+                    <h3>Rutas (Paths) en HTML</h3>
+                    <p>Descubre cómo vincular archivos y recursos usando rutas relativas y absolutas.</p>
+                </a>
+    
+                <a href="./contenidos/css-selectores.html" class="link-card">
+                    <h3>Selectores CSS Fundamentales</h3>
+                    <p>Conoce las herramientas básicas para elegir elementos y aplicarles estilos con CSS.</p>
+                </a>
+    
+                 <a href="./contenidos/js-dom-intro.html" class="link-card">
+                    <h3>Intro a Manipulación del DOM con JS</h3>
+                    <p>Empieza a modificar páginas web dinámicamente con JavaScript.</p>
+                </a>
+    
+                <a href="./contenidos/git-ignore-file.html" class="link-card">
+                    <h3>El Archivo .gitignore</h3>
+                    <p>Aprende a decirle a Git qué archivos debe ignorar en tu proyecto.</p>
+                </a>
+    
+            </div>
+            </div>
+           
+        <footer>
+            <p>C.F.P Nro. 403 “OSCAR SMITH” - escuela de oficios gratuita -
+                Lavalle 740 - LUJAN</p>
+                <p>cfp403lujan@yahoo.com.ar</p>
+                <p>02323 64-3809</p>
+                    
+        </footer>
+    
+    </body>
+    </html>
