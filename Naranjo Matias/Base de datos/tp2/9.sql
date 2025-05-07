@@ -1,0 +1,1 @@
+SELECT nombre from autores WHERE nombre like "A%";
