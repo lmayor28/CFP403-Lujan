@@ -1,0 +1,1 @@
+SELECT titulo from libros WHERE ano_publicacion BETWEEN 1970 AND 1992;
