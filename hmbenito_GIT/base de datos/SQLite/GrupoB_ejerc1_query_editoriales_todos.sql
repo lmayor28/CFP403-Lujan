@@ -1,0 +1,2 @@
+SELECT editoriales.*
+from editoriales;
