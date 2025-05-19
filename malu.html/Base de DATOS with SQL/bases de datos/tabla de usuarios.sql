@@ -1,0 +1,10 @@
+INSERT INTO usuarios (nombre, email, fecha_registro) VALUES ('Ana Gómez', 'ana.gomez@email.com', '2023-01-10');
+INSERT INTO usuarios (nombre, email, fecha_registro) VALUES ('Luis Pérez', 'luis.perez@email.com', '2023-01-15');
+INSERT INTO usuarios (nombre, email, fecha_registro) VALUES ('Maria Rodríguez', 'maria.r@email.com', '2023-02-01');
+INSERT INTO usuarios (nombre, email, fecha_registro) VALUES ('Carlos Fernández', 'carlos.f@email.com', '2023-02-10');
+INSERT INTO usuarios (nombre, email, fecha_registro) VALUES ('Laura López', 'laura.l@email.com', '2023-03-05');
+INSERT INTO usuarios (nombre, email, fecha_registro) VALUES ('Pedro Sánchez', 'pedro.s@email.com', '2023-03-10');
+INSERT INTO usuarios (nombre, email, fecha_registro) VALUES ('Sofía García', 'sofia.g@email.com', '2023-03-15');
+INSERT INTO usuarios (nombre, email, fecha_registro) VALUES ('Javier Martínez', 'javier.m@email.com', '2023-04-01');
+INSERT INTO usuarios (nombre, email, fecha_registro) VALUES ('Elena Díaz', 'elena.d@email.com', '2023-04-05');
+INSERT INTO usuarios (nombre, email, fecha_registro) VALUES ('Miguel Ruiz', 'miguel.r@email.com', '2023-04-10');

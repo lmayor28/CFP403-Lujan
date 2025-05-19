@@ -1,0 +1,2 @@
+SELECT categorias.*
+FROM categorias;
