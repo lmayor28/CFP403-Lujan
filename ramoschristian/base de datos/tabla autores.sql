@@ -1,0 +1,6 @@
+CREATE TABLE autores (
+    id_autor INTEGER PRIMARY KEY AUTOINCREMENT,
+	nombre VARCHAR(100) NOT NULL,
+	nacionalidad VARCHAR(50)
+	);
+	
