@@ -1,0 +1,1 @@
+SELECT autores.nacionalidad FROM autores;

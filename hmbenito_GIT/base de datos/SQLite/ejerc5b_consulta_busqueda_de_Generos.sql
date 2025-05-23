@@ -1,0 +1,1 @@
+SELECT libros.genero FROM libros;

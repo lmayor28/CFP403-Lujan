@@ -1,0 +1,10 @@
+INSERT INTO libros(titulo,genero,id_autor,año_publicacion)VALUES("ciencia","ciencia",4,"1997");
+INSERT INTO libros(titulo,genero,id_autor,año_publicacion)VALUES("ficcion","ficcion",3,"2014");
+INSERT INTO libros(titulo,genero,id_autor,año_publicacion)VALUES("medicina","medicina",3,"1768");
+INSERT INTO libros(titulo,genero,id_autor,año_publicacion)VALUES("arquitectura","arquitectura",5,"2010");
+INSERT INTO libros(titulo,genero,id_autor,año_publicacion)VALUES("infantil","infantil",1,"2007");
+INSERT INTO libros(titulo,genero,id_autor,año_publicacion)VALUES("fantasia","fantasia",2,"1980");
+INSERT INTO libros(titulo,genero,id_autor,año_publicacion)VALUES("musica","musica",1,"1997");
+INSERT INTO libros(titulo,genero,id_autor,año_publicacion)VALUES("cocina","cocina",2,"1997");
+INSERT INTO libros(titulo,genero,id_autor,año_publicacion)VALUES("profesorado","profesorado",4,"1997");
+INSERT INTO libros(titulo,genero,id_autor,año_publicacion)VALUES("empresas","empresas",3,"1736");

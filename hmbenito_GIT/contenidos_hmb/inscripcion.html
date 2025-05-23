@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripcion Curso</title>
+    <link rel = "stylesheet" href = "/hmbenito_GIT/CFP403_estilos.css" > 
+</head>
+<header>
+    <img src="/hmbenito_GIT/imagenes/insignia/logo_CFP403.jpg" alt="Logo_CFP" id="logo">
+    <h1>CFP403</h1>
+    <h1>Inscripcion a Cursos</h1>
+    
+    <nav>
+        <ul>
+            <li><a href="/hmbenito_GIT/index.html">Inicio</a></li>
+            <li><a href="cursos.html">Cursos</a></li>
+            <li><a href="profesores.html">Profesores</a></li>                <li><a href="inscripcion.html">Inscripcion</a></li>
+            <li><a href="/hmbenito_GIT/contenidos_hmb/contacto.html">Contacto</a></li>
+            <li><a href="cooperadora.html">Cooperadora</a></li>
+            <li><a href="/hmbenito_GIT/contenidos_hmb/comunidad.html">Comunidad</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div id="Formulario">
+        <h2><strong>Formulario de Inscripcion</strong></h2>
+        <div>
+            <form>
+                <div>
+                <label> <strong> Nombre:</strong></label>
+                
+                <input type="text" id="nombre" placeholder="Ingrese su nombre"> 
+                <input type="text" id="apellido" placeholder="Ingrese su apellido"> 
+                <input type="text" id="DNI" placeholder="DNI">                                         
+                <label> <strong> Fecha de Nacimiento:</strong></label>
+                
+                <input type="date" id="fechaNacimiento" placeholder="Ingrese su fecha de nacimiento dd/mm/aaaa">
+                <label for="email"> <strong> E-mail:</strong></label>
+                
+                <input type="email" id="E-mail" placeholder="Ingrese su e-mail"> 
+               
+
+                </div>
+
+                <label> <strong> Estudios realizados:</strong></label>
+               
+                <div class="radioButton">
+                    <input type="radio" id="secundario" name="Secundario completo" checked="" required>
+                    <label for="Secundario">Secundario</label>
+                    <input type="radio" id="Terciario" name="Terciario" checked="" required>
+                    <label for="Terciario">Terciario</label>
+                    <input type="radio" id="Universitario" name="Universitario" checked="" required>
+                    <label for="Unviersitario">Universitario</label>
+                </div>
+              
+                
+                <label> <strong> Subir archivo de estudios realizados:</strong></label>
+               
+                <input type="file" name="uploadFile" id="subirArchivo">
+                
+
+                <label for="pais"> <strong> País:</strong></label>
+                
+                <select id="pais" name="país">
+                    <option value="Argentina">Argentina</option>
+                    <option value="Uruguay">Uruguay</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Bolivia">Bolivia</option>
+                </select>
+                
+                <label for="Curso"> <strong> Seleccione el Curso a inscribirse:</strong></label>
+                
+                <select id="Curso" name="curso">
+                    <option value="Habilidades Digitales">Habilidades Digitales</option>
+                    <option value="Creacion Contenidos Digitales">Creacion Contenidos Digitales</option>
+                    <option value="Diseño Proyectual">Diseño Proyectual</option>
+                    <option value="Diseño Gráfico">Diseño Gráfico</option>
+                    <option value="Herramientas informaticas en la Empresa/administracion">Herramientas informaticas en la Empresa/administracion</option>
+                    <option value="Curso instalador y soporte de sistemas informaticos">Curso instalador y soporte de sistemas informaticos</option>
+                    <option value="Programacion de dispositivos móviles">Programacion de dispositivos móviles</option>
+                    <option value="Programacion WEB">Programacion WEB</option>
+                    <option value="Programador">Programador</option>
+                    <option value="Diseño de video Juegos">Diseño de video Juegos</option>
+
+                </select>
+
+                <label> <strong> Comentario:</strong></label>
+               
+                <textarea id="comentario" name="Comentarios" rows="5"></textarea>
+               
+                <label> <strong> Cantidad:</strong></label>
+                
+                <input type="text" id="cantidad">
+                
+                
+                <button type="submit"> <strong> Enviar</strong></button>
+
+                
+            </form>
+           
+
+        </div>
+        
+    </div>
+</body>
+</html>
