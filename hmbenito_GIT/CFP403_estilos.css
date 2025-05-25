@@ -1,0 +1,215 @@
+header {
+    display: flex;
+    margin-left: 0px;
+    background-color: #9668b0;
+    color: white;
+    padding: 10px;
+    text-align:center;
+    vertical-align: top;
+}
+#Section_principal {
+    background-image:url(imagenes/insignia/CFP403_foto.jpg); 
+    height: 700px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+img {
+    width: 100px;
+    height: 70px;
+    /* border-radius: 50%; */
+    position: relative;
+    top: 5px;
+    left: 5px;
+    }
+.curso-imagen{
+         width: 400px;
+        height: auto;
+        border-radius: 50%;
+        position: relative;
+        top: 5px;
+        left: 5px;
+        bottom: 5px;
+        }
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    text-emphasis-color: white;
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+li{
+    list-style: none;
+    margin: 0 15px;
+    display: inline-flex;
+}
+
+.container,.Pre-Inscripcion,.footer{
+    flex: grow 2; /* Permite que el contenedor crezca y ocupe el espacio disponible */
+    /* block-size: auto; */
+    content:flex;
+    width: 100%; /* Un poco más ancho */
+    max-width: 1150px; /*Ancho máximo */
+    margin: 10px auto; /* Margen superior/inferior */
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Sombra */
+    border-radius: 10px;
+    position:relative; /* Para el posicionamiento absoluto de los elementos dentro */
+    /* display: flex; Flexbox para alinear los elementos */
+    left: 0px;
+}
+.link-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    text-decoration: none; /* Importante para que todo el bloque sea un enlace */
+    color: #333; /* Color del texto */
+    display: block; /* Hace que la tarjeta sea un bloque */
+    
+}
+.curso,.curso-imagen{
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    text-decoration: none; /* Importante para que todo el bloque sea un enlace */
+    color: #333; /* Color del texto */
+    display:flex; /* Hace que la tarjeta sea un bloque */
+    vertical-align: center;
+    left: auto;
+    block-size: auto;
+    text-indent: 2cap;
+    margin: 10px;
+    
+}
+
+@keyframes desplazar-cambiar-color {
+    0% {transform: translateX(0px); 
+        background-color:greenyellow; }
+    50% {transform: translateX(10px); 
+        background-color:blue; }
+    100% {transform: translateX(0px); 
+        background-color: greenyellow; }
+}
+.link-card:hover {
+    transform: translateY(-5px) scale(1.02); /* Desplazamiento hacia arriba */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    animation: desplazar-cambiar-color 2s; /* Animación al pasar el ratón */
+
+}
+
+.link-card {
+    width: 150px;
+    height: auto;
+    position: relative;
+    padding-left: 5px;
+    
+}
+.content-links-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Cambia el tamaño mínimo según sea necesario */
+    gap: 10px; /* Espacio entre los enlaces */
+    margin-top: 20px; /* Espacio superior */
+    padding: 0 10px; /* Espacio lateral */
+    
+}
+h1 {
+    font-size: 24px;
+    margin: 10px;
+    text-align: center;
+    color: #1fd662; /* Color del texto */
+}
+.container h3 {
+    font-size: 20px;
+    margin: 10px;
+    text-align: center;
+    color: #ecaf15; /* Color del texto */
+}
+
+/*style animaciones  */
+@keyframes cambiar-color {
+    0% {transform: translateX(0px); 
+        background-color:greenyellow; }
+    50% {transform: translateX(100px); 
+        background-color:blue; }
+    100% {transform: translateX(0px); 
+        background-color: greenyellow; }
+}
+.caja-animacion{
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    animation: cambiar-color 2s infinite;
+    animation-direction: alternate;  
+
+}
+
+.formulario {
+    display: flex;
+    align-items: justify;
+    /* justify-content: center; */
+    margin-top: 20px;
+    border-radius: 5%;
+    border-color: #9668b0;
+    block-size: auto;
+}
+
+
+
+/* fin animaciones */
+
+
+/* 
+.carousel {flex:content
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow:visible;
+    border-radius: 10px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+.Contenedores_Horizontales {
+    display: flex;
+    font-size: 14px;
+    text-align: center;
+} */

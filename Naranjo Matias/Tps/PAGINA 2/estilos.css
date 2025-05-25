@@ -1,0 +1,117 @@
+form label, 
+form input, 
+form textarea, 
+form button {
+    display: block;
+    margin-bottom: 10px; /* Espaciado entre los elementos */
+    
+  }
+
+header {
+    text-align: center;
+    background-color: mediumseagreen;
+}
+
+nav ul{
+    justify-content: center;
+    display: flex;
+    
+    
+    
+}
+
+li{
+    margin: 10px;
+    
+    
+}
+
+button{
+    color: aliceblue;
+     background-color: mediumseagreen;
+
+
+}
+
+footer{
+    text-align: center;
+    background-color: mediumseagreen;
+    color: aliceblue;
+    margin-top: 30px;
+    padding: 20px;
+
+}
+
+nav ul li{
+    list-style: none;
+     
+
+}
+
+main {
+    display: flex;
+}
+section{flex: 3; }
+
+aside{flex: 1; background-color: lightgreen; text-align: start; padding: 10px;}
+
+
+
+
+
+table {
+    border-collapse: collapse; /* Elimina los espacios entre bordes */
+    width: 100%; /* Ajusta el ancho de la tabla */
+    font-family: Arial, sans-serif;
+  }
+  
+  th, td {
+    border: 1px solid #ddd; /* Agrega un borde sutil */
+    padding: 8px; /* Espaciado interno */
+    text-align: left; /* Alinea el contenido a la izquierda */
+  }
+  
+  th {
+    background-color: mediumseagreen; /* Color del encabezado */
+    color: white; /* Color del texto del encabezado */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2; /* Fondo para filas pares */
+  }
+  
+  tr:hover {
+    background-color: #ddd; /* Efecto al pasar el cursor */
+  }
+ 
+
+  form {
+    width: 98%; /* Ocupa todo el ancho disponible */
+    margin: 0; /* Elimina los márgenes */
+    padding: 0.5%; /* Elimina el espacio interno */
+    border: 2px solid black;
+
+    
+    
+  }
+  
+  label, input, textarea, button {
+    display: block; /* Hace que cada elemento ocupe una línea completa */
+    width: 95%; /* Ajusta cada elemento al ancho del formulario */
+    margin-bottom: 10px; /* Espaciado entre los elementos */
+  }
+
+  div {
+    background-color: whitesmoke;
+    padding: 10px;
+    border: 2px solid black;
+    
+
+  }
+
+  a {
+      text-decoration: none;
+      
+  }
+  
+  
