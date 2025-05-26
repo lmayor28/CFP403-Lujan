@@ -155,3 +155,48 @@ for (let i = 0 ; i < fruits.length; i++) {
   console.log(persona)
 
   console.log(persona.nombre)
+//ejercicios de clase 23/5
+  let palabra = ("hola mundo")
+  console.log(palabra.length,palabra)
+
+  console.log(palabra.toUpperCase())
+  console.log(palabra.toLowerCase())
+  let = sub_palabra = palabra.substring(0,4)
+  console.log(sub_palabra)
+
+  console.log(palabra.indexOf("mundo"))
+
+  let frase = palabra.replace("hola", "Chau ")
+  console.log(frase)
+
+  console.log(frase.trim())
+  
+  let cortado = palabra.slice(0,4)
+  console.log(cortado)
+  
+  function analizarFraseClave(fraseOriginal=""){
+    frasenormalizada = fraseOriginal.toLowerCase().trim()
+
+    longitud =  frasenormalizada.length
+    indicecentral = longitud / 2
+    if (longitud % 2 == 1) {
+      caracterdelmedio = frasenormalizada.charAt(indicecentral)
+    }else{
+
+      indice = longitud / 2-1
+      indice1 = longitud / 2 
+
+      caracterdelmedio = frasenormalizada.charAt(indice) + frasenormalizada.charAt(indice1)
+
+
+    }
+
+
+  }
+  
+  
+analizarFraseClave ("hola mundo")  
+
+
+  
+
