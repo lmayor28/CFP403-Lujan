@@ -198,5 +198,114 @@ for (let i = 0 ; i < fruits.length; i++) {
 analizarFraseClave ("hola mundo")  
 
 
-  
+  //ejercisios 26/05
 
+for (let i = 0; i<=10; i++){
+
+console.log(i)
+} 
+
+
+for (let i = 2; i<=20; i+=2){
+
+console.log(i)
+} 
+
+for (let i = 10; i>=0; i--){
+
+console.log(i)
+} 
+
+
+
+function sumarPrimerosN(n){
+let suma = 0
+
+for (let i = 1 ;i<=n; i++ ){
+  suma +=i
+}
+return suma
+
+    
+}
+
+console.log(sumarPrimerosN(5))
+console.log(sumarPrimerosN(10))
+console.log(sumarPrimerosN(1))
+
+
+let verduras = ["manzana", "banana", "cereza","datil"]
+
+for (let i = 0; i<=3; i++){
+
+console.log(verduras[i])
+} 
+
+function factorialConFor (n){
+  let valor = 1
+for (let i = 1 ;i<=n; i++ ){
+  valor *=i
+}
+return valor
+
+
+}
+console.log(factorialConFor(5))
+console.log(factorialConFor(0))
+console.log(factorialConFor(1))
+console.log(factorialConFor(7))
+
+
+let registroedad = [15, 38, 52, 27, 16 ,18 , 5, 2 ,25 ]
+
+function encontrarMaximoConFor(registroedad=""){
+let mayor = registroedad[0]
+
+for (let i = 0 ; i < registroedad.length; i++) {
+  if (registroedad[i] > mayor ) {
+    mayor = registroedad[i]
+  }
+}
+return mayor
+}
+
+console.log(encontrarMaximoConFor(registroedad))
+
+
+function revertirStringConfor(texto){
+  let invertido = "";
+  for (let i = texto.length - 1; i >= 0; i--) {
+    invertido += texto[i];
+  }
+  return invertido;
+
+
+}
+console.log(revertirStringConfor("hola"))
+console.log(revertirStringConfor("javascript"))
+
+function generarFibonacci(n){
+  let fibo = []
+    if (n >= 1) fibo.push(0);      
+    if (n >= 2) fibo.push(1);   
+
+  for(let i = 2  ; i<n ; i++ ){
+    let fibo2 = fibo[i - 1] + fibo[i - 2];
+    fibo.push(fibo2);
+  
+  }
+ return fibo
+}
+console.log(generarFibonacci(8));
+
+function dibujarTriangulo(altura) {
+    for (let i = 1; i <= altura; i++) {
+        let fila = '';
+        for (let j = 0; j < i; j++) {
+            fila += '*';
+        }
+        console.log(fila);
+    }
+}
+
+dibujarTriangulo(5);
