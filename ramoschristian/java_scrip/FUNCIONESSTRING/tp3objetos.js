@@ -56,3 +56,61 @@
 //             }
 //         }
 //         console.log(robot["saludar al robot"]()   )
+  
+    //  6.2        let contador={
+    //             valoractual : 0,
+    //             incrementar: function(){
+    //                 this.valoractual= this.valoractual + 1
+    //             },
+    //             decrementar: function(){
+    //                 this.valoractual= this.valoractual - 1
+    //             },
+    //             obtenervalor : function(){
+    //                 return this.valoractual
+    //             }
+    //         }
+    //         contador.incrementar()
+    //         contador.incrementar()
+    //         contador.incrementar()
+    //         contador.decrementar()
+    //         console.log(contador.obtenervalor())
+
+
+
+// 7.1    let personaje = {
+//         nombre: "Aragorn",
+//         raza: "Humano (Dúnedain)",
+//         clase: "Guerrero / Explorador",
+//         armaPrincipal: "Andúril"  
+//         };
+
+//         for (let clave in personaje) {
+//     console.log("Clave:", clave, "| Valor:", personaje[clave])
+//         }
+                
+ 
+
+// 7.2    let datosMixtos = {
+//         a: 10,
+//         b: "hola",
+//         c: 25,
+//         d: true,
+//         e: 5
+//         };
+
+
+//         let valores =Object.values(datosMixtos)
+//         console.log(valores)
+
+//         console.log(datosMixtos);
+
+//         console.log(datosMixtos);
+//         typeof mivariable === "number"
+//         let valorfinal=0
+//         function sumar(valor){
+//         if(typeof valor=== "number"){
+//             valorfinal=valorfinal+valor
+//             }
+//         }
+//         valores.forEach(sumar)
+//         console.log(valorfinal)
