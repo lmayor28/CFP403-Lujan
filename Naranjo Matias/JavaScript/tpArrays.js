@@ -111,3 +111,15 @@ console.log(letra.slice(2,5))
  })
  
 console.log(mayoresdeedad)
+
+let carrito = [
+  { nombre: "Libro", precio: 20 },
+  { nombre: "Cuaderno", precio: 5 },
+  { nombre: "Lápiz", precio: 1 }
+];
+
+let total = carrito.reduce((acumulador, producto) => {
+  return acumulador + producto.precio;
+}, 0);
+
+console.log("Total del carrito:", total);
