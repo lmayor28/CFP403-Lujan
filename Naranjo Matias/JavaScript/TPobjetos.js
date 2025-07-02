@@ -67,3 +67,87 @@ let robot = {
 }
 
 console.log(robot.saludaralobjetorobot())
+
+let contador = {
+    valorActual: 0,
+    incrementar:function(){
+        this.valorActual = this.valorActual +1 
+    },
+    decremetnar:function(){
+        this.valorActual = this.valorActual -1 
+    },
+    obtenerValor:function(){
+        return this.valorActual
+
+    }
+}
+
+
+
+
+console.log(contador.valorActual)
+contador.incrementar()
+console.log(contador.obtenerValor())
+console.log(contador.obtenerValor())
+
+let auto = {
+  marca: "Ford",
+  modelo: "Mustang",
+  año: 1969
+};
+
+for (let clave in auto){
+    console.log((clave), auto[clave])
+}
+
+let computadora = {
+  cpu: "Intel i7",
+  ram: "16GB",
+  disco: "1TB SSD"
+};
+
+let claves = Object.keys(computadora)
+console.log(claves)
+
+
+
+function nombre(clave){
+    console.log(clave , computadora[clave])
+}
+claves.forEach(nombre)
+
+let valores = Object.values(computadora)
+console.log(valores)
+
+let entradas = Object.entries(computadora)
+console.log(entradas)
+
+let personaje = {
+  nombre: "Aragorn",
+  raza: "Humano (Dúnedain)",
+  clase: "Guerrero / Explorador",
+  armaPrincipal: "Andúril"
+};
+
+for (let keys in personaje) {
+    console.log((keys)+":", personaje[keys])
+}
+
+let datosMixtos = {
+  a: 10,
+  b: "hola",
+  c: 25,
+  d: true,
+  e: 5
+};
+
+let valoress = Object.values(datosMixtos);
+let suma = 0
+
+function sumanumero(valor){
+    if (typeof valor === "number"){
+        suma =  suma + valor 
+    }
+}
+valoress.forEach(sumanumero)
+console.log(suma)
