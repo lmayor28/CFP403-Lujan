@@ -1,4 +1,4 @@
- https://pokeapi.co/api/v2/pokemon/charmander.
+//  https://pokeapi.co/api/v2/pokemon/charmander.
  fetch('https://pokeapi.co/api/v2/pokemon/charmander') 
   .then(response => {
     
@@ -77,3 +77,31 @@ fetch("https://pokeapi.co/api/v2/pokemon/ditto")
         console.log("hubo un error en la operacion fetch:" + Error);
     });
 
+
+//     HTML: Crea un div vacío con id="rick-morty-card".
+// JS: Haz fetch a la URL de un personaje, por ejemplo: https://rickandmortyapi.com/api/character/2 (Morty Smith).
+// Renderiza una tarjeta que muestre:
+// Nombre del personaje (name).
+// Imagen (image).
+// Especie (species).
+// (Desafío) El nombre de su lugar de origen. Este dato está anidado: origin.name.
+
+// https://rickandmortyapi.com/api/character/2 (Morty Smith).
+fetch("https://rickandmortyapi.com/api/character/2 (Morty Smith)")
+    .then(response => {
+        if(!response.ok) {
+            throw new Error("La respuesta de la red no fue correcta");
+        }
+        return response.json();
+    }).then(data => {
+	      let h2 = document.createElement("H2");
+        let imagen = document.createElement("IMG");
+        let especie = document.createElement("P");
+      
+        h2.textContent = data.name
+        imagen.setAttribute("src", `${data.sprites.front_default}`);
+        especie.textContent = data.types[0].type.name;
+      
+    }).catch( Error  => {
+        console.log("hubo un error en la operacion fetch:" + Error);
+    });
