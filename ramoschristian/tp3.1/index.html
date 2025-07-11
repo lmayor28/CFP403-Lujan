@@ -1,0 +1,221 @@
+<!-- 1
+const productos = [
+  { nombre: "Laptop", precio: 1200 },
+  { nombre: "Mouse", precio: 25 },
+  { nombre: "Teclado", precio: 75 },
+  { nombre: "Monitor", precio: 300 }
+];
+
+
+productos.forEach((producto) => {
+    console.log(`Producto: ${producto.nombre} Precio: ${producto.precio}`);
+})
+
+2. 
+
+let estudiantes = [
+  { nombre: "Ana", nota: 8 },
+  { nombre: "Luis", nota: 5 },
+  { nombre: "Marta", nota: 9 },
+  { nombre: "Juan", nota: 3 }
+];
+
+
+estudiantes.forEach((estudiante) => {
+    if (estudiante.nota >= 7) {
+        estudiante.estado = "Aprobado";
+    } else {
+        estudiante.estado = "Reprobado";
+    }
+})
+
+
+console.log(estudiantes);
+
+3. 
+
+const libros = [
+  { titulo: "El Principito", paginas: 100 },
+  { titulo: "Don Quijote", paginas: 863 },
+  { titulo: "Cien Años de Soledad", paginas: 417 },
+  { titulo: "Ficciones", paginas: 220 }
+];
+
+
+let LibrosModificado = libros.filter((libro) => {
+    return libro.paginas > 300;
+})
+
+
+console.log(LibrosModificado);
+
+
+4. 
+
+const carrito = [
+  { nombre: "Camisa", precioUnitario: 20, cantidad: 2 },
+  { nombre: "Pantalón", precioUnitario: 50, cantidad: 1 },
+  { nombre: "Zapatos", precioUnitario: 80, cantidad: 1 },
+  { nombre: "Medias", precioUnitario: 5, cantidad: 3 }
+];
+
+
+let precioTotal = carrito.reduce((acum,producto) => {
+    return acum += producto["precioUnitario"] * producto["cantidad"];
+},0)
+
+
+console.log(`El total del carrito es: ${precioTotal}`);
+
+
+5. 
+
+const usuarios = [
+  { id: "u001", nombre: "Pedro", email: "pedro@example.com" },
+  { id: "u002", nombre: "Laura", email: "laura@example.com" },
+  { id: "u003", nombre: "Santiago", email: "santiago@example.com" }
+];
+
+
+function buscarUsuarioPorId(usuarios = [] ,idBuscado){
+    let encontrado = usuarios.find((usuario) => {
+        return usuario.id == idBuscado;
+    })
+    if (encontrado === undefined) {
+        console.log(`Usuario no encontrado`);
+    } else {
+        console.log(encontrado);
+    }
+}
+
+6. 
+
+const flota = [
+  { marca: "Toyota", modelo: "Corolla" },
+  { marca: "Ford", modelo: "Fiesta" },
+  { marca: "Toyota", modelo: "Hilux" },
+  { marca: "Honda", modelo: "Civic" },
+  { marca: "Toyota", modelo: "RAV4" }
+];
+
+
+function contarPorMarca(listaCoches = [], marcaBuscada) {
+    let conteo = listaCoches.reduce((acum,coche) => {
+        if(coche.marca === marcaBuscada) {
+            acum += 1;
+        }
+        return acum;
+    },0)
+    return `La cantidad de ${marcaBuscada} es:`+ conteo;
+}
+
+
+console.log(contarPorMarca(flota, "Ford"));
+
+
+
+7. 
+
+const ventas = [
+  { producto: "Manzanas", monto: 50 },
+  { producto: "Peras", monto: 30 },
+  { producto: "Manzanas", monto: 70 },
+  { producto: "Naranjas", monto: 40 },
+  { producto: "Peras", monto: 25 },
+  { producto: "Manzanas", monto: 20 }
+];
+
+
+let resumenVentas = {};
+ventas.forEach((venta, index) => {
+    let producto = venta.producto;
+    let monto = venta.monto;
+    if(!resumenVentas[producto]){
+        resumenVentas[producto] = monto;
+    } else {
+        resumenVentas[producto] += monto;
+    }
+});
+
+
+console.log(resumenVentas);
+
+
+8.
+
+
+const agenda = [
+  { nombreEvento: "Reunión de Equipo", fecha: "2024-06-10" },
+  { nombreEvento: "Presentación Cliente", fecha: "2024-06-12" },
+  { nombreEvento: "Taller de JavaScript", fecha: "2024-06-15" }
+];
+// Evento: [nombreEvento] - Fecha: [fecha]".
+let descripcionesEventos = [];
+
+
+agenda.forEach(evento => {
+    let descripcion = `Evento: ${evento.nombreEvento} - Fecha: ${evento.fecha}`;
+    descripcionesEventos.push(descripcion);
+})
+   
+console.log(descripcionesEventos);
+
+
+9. 
+
+const clases = [
+  {
+    nombreClase: "Matemáticas Avanzadas",
+    estudiantes: ["Ana", "Juan", "Sofía"]
+  },
+  {
+    nombreClase: "Historia del Arte",
+    estudiantes: ["Carlos", "Laura"]
+  },
+  {
+    nombreClase: "Programación Web",
+    estudiantes: ["Pedro", "Elena", "Mario", "Lucía"]
+  }
+];
+
+
+clases.forEach(clase => {    
+    let estudiantes = clase.estudiantes;
+    console.log(`clase: ${clase.nombreClase}`);
+    estudiantes.forEach(estudiante => {
+        console.log(estudiante);
+    });  
+});
+
+
+for(let i = 0; i < clases.length; i++) {
+    let estudiantes = clases[i].estudiantes;
+    console.log(`Clase: ${clases[i].nombreClase}`);
+    for(let j = 0; j < estudiantes.length; j++){
+        console.log(estudiantes[j]);
+    }
+}
+
+hice dos soluciones una con ForEach y otra con For comun 
+
+
+10. Actualizar Salarios de Empleados
+
+let empleados = [
+  { nombre: "Alicia", salario: 50000, departamento: "Ventas" },
+  { nombre: "Bruno", salario: 60000, departamento: "Marketing" },
+  { nombre: "Carlos", salario: 55000, departamento: "Ventas" },
+  { nombre: "Diana", salario: 70000, departamento: "Tecnología" }
+];
+
+
+let empleadosModificado = empleados.map(empleado => {
+    if(empleado.departamento === "Ventas"){
+        empleado.salario *= 1.10;
+        empleado.aumentoAplicado = true;
+    }
+    return empleado;
+})
+
+
+console.log(empleadosModificado); -->

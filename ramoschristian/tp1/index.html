@@ -1,0 +1,158 @@
+<!-- 1.
+
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+
+2.
+
+for (let i = 0; i <= 20; i+=2) {
+    console.log(i);
+}
+
+3.
+
+
+for (let i = 10; i >= 0; i--) {
+    console.log(i);
+}
+
+4.
+
+
+function sumarPrimerosN(n) {
+    let suma = 0;
+    for (let i = 1; i <= n; i++) {
+        suma += i;
+    }
+    return suma;
+}
+const readlineSync = require('readline-sync');
+
+
+
+let n = readlineSync.question('Ingresa el numero natural N que acumulara la suma en la funcion SumarPrimerosN: ');
+sumarPrimerosN(n);
+let suma = sumarPrimerosN(n);    
+console.log('La suma de los primeros ${n} números naturales es: ' + suma);
+
+
+5.
+
+const frutas = ["manzana", "banana", "cereza", "dátil"];
+for (let i = 0; i < frutas.length; i++) {
+    console.log(frutas[i]);
+}
+
+
+6.
+
+function factorialPrimerosN(F) {
+    let factorial = 1;
+    for (let i = 1; i <= n; i++) {
+        factorial=factorial*i;
+    }
+    return factorial;
+}
+const readlineSync2 = require('readline-sync');
+
+
+let F = readlineSync2.question('Ingresa el numero natural N que acumulara el factorial en la funcion FactorialPrimerosN: ');
+factorialPrimerosN(F);
+let factorial = factorialPrimerosN(F);    
+console.log('El factorial de los primeros ${n} números naturales es: ' + factorial);
+
+
+7.
+
+
+function encontrarMaximoConFor(numeros) {
+    if (numeros.length === 0) {
+        return undefined; // o -Infinity
+    }
+    let maximo = numeros[0];
+    for (let i = 1; i < numeros.length; i++) {
+        if (numeros[i] > maximo) {
+            maximo = numeros[i];
+        }
+    }
+    return maximo;
+}
+let numeros = [3, 7, 2, 9, 4];
+let maximo = encontrarMaximoConFor(numeros);
+console.log('El número más grande en el array es: ' + maximo);
+const readlineSync3 = require('readline-sync');
+const readlineSync4 = require('readline-sync');
+
+let respuesta ="si";
+
+
+while (respuesta == 'si') {
+let agregarNumero = readlineSync3.question('Agregue numero natural N al array {numeros}: '+ numeros + ' : ');
+numeros.push(parseInt(agregarNumero));
+respuesta = readlineSync4.question('Desea continuar agregando numeros al array "si" continua: ');
+for (let i = 0; i < numeros.length; i++) {
+    console.log(numeros[i]);
+}
+encontrarMaximoConFor(numeros);
+let maximo = encontrarMaximoConFor(numeros);
+console.log('El número más grande en el array es: ' + maximo);
+}
+
+8.
+
+
+
+const readlineSync5 = require('readline-sync');
+
+
+function revertirStringConFor(cadena){
+    let textoRevertido = '';
+    for (let i = cadena.length - 1; i >= 0; i--) {
+        textoRevertido += cadena[i];
+    }
+    return textoRevertido;
+}
+cadena = readlineSync5.question('Ingrese cadena de texto a revertir: ');
+console.log('El texto revertido es: ' + revertirStringConFor(cadena));
+
+
+9.
+
+
+function generarFibonacci(numero) {
+    let fibonacci = [];
+    for (let i = 0; i < numero; i++) {
+        if (i === 0) {
+            fibonacci.push(0);
+        } else if (i === 1) {
+            fibonacci.push(1);
+        } else {
+            fibonacci.push(fibonacci[i - 1] + fibonacci[i - 2]);
+        }
+    }
+    return fibonacci;
+}
+const readlineSync6 = require('readline-sync');
+numero = readlineSync5.question('Ingrese un numero natural N para calcular los numeros Fibonacci: ');
+console.log('La secuencia Fibonacci es: ' + generarFibonacci(numero));
+
+
+ 10. 
+
+
+const readlineSync7 = require('readline-sync');
+function dibujarTriangulo(altura) {
+    for (let i = 1; i <= altura; i++) {
+        let linea = '';
+        for (let j = 0; j < i; j++) {
+            linea += '*';
+        }
+        console.log(linea);
+    }
+}
+
+
+let altura = readlineSync7.question('Ingrese un numero natural N para calcular la altura del triangulo: ');
+dibujarTriangulo(altura); -->
