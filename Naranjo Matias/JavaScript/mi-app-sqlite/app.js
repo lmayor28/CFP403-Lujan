@@ -88,3 +88,10 @@ nuevosProductos.forEach((producto)=> {
   });
 });
 
+db.all("SELECT id, nombre FROM usuarios", [], (err, rows) => {
+  if (err) throw err;
+  console.log(rows)
+  rows.forEach(row => console.log(row.nombre));
+});
+
+
