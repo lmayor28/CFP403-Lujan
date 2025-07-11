@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head id="inicio" class="inicio">
+    <link rel="stylesheet " href = "estilos.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet " href = "estilos.css">
+    <title> CFP 403 </title>
+    
+ </head>
+
+ <body>
+  <header>
+    <h1>Curso de HTML y CSS</h1>
+   <p>Conceptos Basicos en Accion</p>
+  </header>    
+
+  <header>
+    <nav>
+        <ul style="list-style: square;">
+            <li><a href="#inicio" >Inicio</a></li>
+            <li><a href= "#contenido">Contenido</a></li>
+            <li><a href= "#contacto">Contacto</a></li>
+        </ul>
+        
+     </nav>
+
+  </header>     
+
+  <main>
+   <section id="contenido" class="contenido">
+    <h2>Estructura y Elementos HTML</h2>
+    <p>Este ejemplo demustra como utlilizar las etiquetas basicas de HTML. Aqui encontraras elementos como encabezados, parrafos, listas, tablas y formularos</p>
+    <h3> Etiquetas y Conceptos:</h3>
+ <ul>
+    <li>Encabezados: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code> etc.</li>
+    <li>Parrafos: <code>&lt;p&gt;</code> </li>
+    <li>Listas: <code>&lt;ol&gt;</code> y <code>&lt;ul&gt;</code></li>
+    <li>Tablas: <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code></li>
+    <li>Formularios: <code>&lt;form&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;button&gt;</code></li>
+    <li>Estructura Semantica: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code></li>
+ </ul>
+ <h3>Tabla de Comparacion</h3>
+    <table>
+        <tr>
+            <th>Concepto</th>
+            <th>Descripcion</th>
+
+        </tr>
+        <tr>
+            <td>HTML</td>
+            <td>Estructura y contenido</td>
+        </tr>
+        <tr>
+            <td>CSS</td>
+            <td>Diseño y presentacion</td>
+        </tr>
+    </table>
+
+    <h3>Pasos para crear una Pagina Web:</h3> 
+    <ol>
+      <li>Planificar la estructura </li>
+      <li>Escribir el HTML</li>
+      <li>Aplicar el CSS</li>
+      <li>Revisar y ajustar</li>
+    </ol>
+
+ </section>
+
+
+ <aside>
+    <h2>Notas Importantes</h2>
+    <p>Utiliza etiquetas semanticas para mejorar la accesibilidad y el SEO. Organiza tu contenido en bloques bien definidos para facilitar su lectura y mantenimiento.</p>
+
+ </aside>
+ 
+</main>
+
+ <div id="contacto" class="contacto">
+  
+  
+
+
+    <h2>Contacto</h2>
+ <form>
+    <label for="nombre"> Nombre:</label> 
+    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+    
+    <label for="Correo electronico"> Correo electronico:</label> 
+    <input type="email" id="correo electronico" name="correo electronico" placeholder="Ingrese su e-mail">
+    
+    <label for="asunto"> Asunto:</label> 
+    <input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje">
+    
+    <label for="mensaje"> Mensaje:</label> 
+    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Ingrese su mensaje"></textarea>
+    
+    <br>
+    
+    <button type="submit">Enviar</button>
+ 
+   </form>
+ 
+  
+ 
+</div>
+
+
+
+ <footer>
+
+<p> © 2025 Curso HTML y CSS. Todos los derechos reservados </p>
+
+</footer>
+</body>

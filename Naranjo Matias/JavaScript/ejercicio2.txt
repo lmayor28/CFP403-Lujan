@@ -1,0 +1,46 @@
+let salarioMensual = 1000000;
+let salarioAnual = salarioMensual * 12
+let evaluacionRendimiento = prompt (" El Rendimiento fue : Excelente, Bueno, Regular, Malo :");
+let antiguedadAnios = Number(prompt ("Antiguedad en años en la Empresa?:") );
+let cumplioObjetivosEspeciales = Math.random();
+
+if  (cumplioObjetivosEspeciales >= 0.5 ) {
+    cumplioObjetivosEspeciales = true 
+} else { cumplioObjetivosEspeciales = false }
+
+console.log ('Cumplio objetivos:', cumplioObjetivosEspeciales)
+
+switch (evaluacionRendimiento.trim().toLowerCase()) {
+        case "excelente":
+            (salarioAnual = salarioAnual*1.15);
+            break;
+        case "bueno":
+           (salarioAnual = salarioAnual*1.10);
+            break;
+        case "regular":
+           (salarioAnual = salarioAnual*1.05);
+            break;
+        case "malo":
+            (salarioAnual = salarioAnual);
+            break;
+       default:
+            console.log("Ingrese caso correcto!");
+    }
+    
+    console.log ('El rendimiento fue:', evaluacionRendimiento)
+    console.log ('El salario se ajusta a:', salarioAnual)
+
+if (antiguedadAnios >10)  {
+     salarioAnual = (salarioAnual + (salarioAnual*0.05));
+} else if (antiguedadAnios > 5) {
+    salarioAnual = (salarioAnual + (salarioAnual*0.03))
+}
+
+console.log('Anios en la empresa:', antiguedadAnios)
+console.log('Por los anios el salario se ajusta a:', salarioAnual)
+
+if (cumplioObjetivosEspeciales) {
+   salarioAnual = (salarioAnual + 500);
+} else { salarioAnual = salarioAnual }
+
+  console.log ("Salario con bonificacion:"); console.log (salarioAnual);

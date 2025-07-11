@@ -1,0 +1,101 @@
+-- Crear tablas
+
+CREATE TABLE autores (
+    id_autor INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    nacionalidad VARCHAR(50),
+    fecha_nacimiento DATE,
+    biografia TEXT
+);
+
+CREATE TABLE editoriales (
+    id_editorial INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(50) NOT NULL,
+    pais_origen VARCHAR(50),
+    ciudad_sede VARCHAR(50),
+    año_fundacion INTEGER,
+    sitio_web TEXT
+);
+
+CREATE TABLE categorias (
+    id_categoria INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre_categoria VARCHAR(50) UNIQUE NOT NULL,
+    descripcion_categoria TEXT
+);
+
+CREATE TABLE libros (
+    id_libro INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo VARCHAR(255) NOT NULL,
+    id_autor INTEGER,
+    año_publicacion INTEGER,
+    id_editorial INTEGER,
+    sinopsis TEXT,
+    numero_paginas INTEGER,
+    ISBN VARCHAR(20),
+    portada TEXT,
+    FOREIGN KEY (id_autor) REFERENCES autores(id_autor),
+    FOREIGN KEY (id_editorial) REFERENCES editoriales(id_editorial)
+);
+
+CREATE TABLE usuarios (
+    id_usuario INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre VARCHAR(55) NOT NULL,
+    email VARCHAR(55) UNIQUE,
+    fecha_registro DATE,
+    telefono VARCHAR(15),
+    direccion TEXT,
+    fecha_nacimiento DATE
+);
+
+CREATE TABLE libros_categorias (
+    id_libro INTEGER NOT NULL,
+    id_categoria INTEGER NOT NULL,
+    PRIMARY KEY (id_libro, id_categoria),
+    FOREIGN KEY (id_libro) REFERENCES libros(id_libro),
+    FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
+);
+
+CREATE TABLE resenias (
+    id_resenia INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_libro INTEGER NOT NULL,
+    id_usuario INTEGER NOT NULL,
+    calificacion INTEGER NOT NULL CHECK (calificacion >= 1 AND calificacion <= 5),
+    comentario_resenia TEXT,
+    FOREIGN KEY (id_libro) REFERENCES libros(id_libro),
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+);
+
+CREATE TABLE prestamos (
+    id_prestamo INTEGER PRIMARY KEY AUTOINCREMENT,
+    id_libro INTEGER NOT NULL,
+    id_usuario INTEGER NOT NULL,
+    fecha_prestamo DATE NOT NULL,
+    fecha_devolucion DATE,
+    FOREIGN KEY (id_libro) REFERENCES libros(id_libro),
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario)
+);
+
+CREATE TABLE premios (
+    id_premio INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre_premio VARCHAR(100) NOT NULL,
+    año INTEGER NOT NULL,
+    id_libro INTEGER,
+    FOREIGN KEY (id_libro) REFERENCES libros(id_libro)
+);
+
+CREATE TABLE editoriales_autores (
+    id_autor INTEGER NOT NULL,
+    id_editorial INTEGER NOT NULL,
+    PRIMARY KEY (id_autor, id_editorial),
+    FOREIGN KEY (id_autor) REFERENCES autores(id_autor),
+    FOREIGN KEY (id_editorial) REFERENCES editoriales(id_editorial)
+);
+
+CREATE TABLE libros_recomendados (
+    id_usuario INTEGER NOT NULL,
+    id_libro INTEGER NOT NULL,
+    PRIMARY KEY (id_usuario, id_libro),
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
+    FOREIGN KEY (id_libro) REFERENCES libros(id_libro)
+);
+

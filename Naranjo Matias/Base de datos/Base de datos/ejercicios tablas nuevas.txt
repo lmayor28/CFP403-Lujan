@@ -1,0 +1,21 @@
+1. Mostrar todos los datos de la tabla editoriales.
+2. Listar solo el nombre y el país de origen de todas las editoriales.
+3. Mostrar todas las categorías disponibles.
+4. Listar los nombres de las categorías cuya descripción no sea nula.
+5. Obtener todos los datos de las reseñas de libros que tengan una calificación de 5
+6. Mostrar los títulos de los libros publicados después del año 2010, ordenados por año de publicación de forma descendente.
+7. Listar los nombres de las editoriales fundadas antes del año 1980, ordenadas por nombre.
+8. Mostrar los comentarios de las reseñas realizadas en una fecha específica (ej: '2024-01-15').
+9. Listar los diferentes géneros de libros que existen en la tabla libros, sin repetir.
+10. Obtener los id_libro y id_categoria de la tabla libros_categorias para el id_libro = 10.
+
+11. Mostrar el título de cada libro junto con el nombre de su editorial.
+12. Listar el título del libro, el nombre del autor y el nombre de la editorial para todos los libros.
+13. Mostrar el título de los libros y el nombre de la categoría a la que pertenecen.
+14. Listar los nombres de los usuarios y los comentarios de las reseñas que han escrito.
+15. Mostrar el título del libro, el nombre del usuario que hizo la reseña y la calificación dada.
+16. Obtener los títulos de los libros que han sido prestados, junto con el nombre del usuario que realizó el préstamo y el nombre de la editorial del libro.
+17. Listar los nombres de las editoriales y los títulos de los libros que publicaron del género 'Novela Histórica'.
+18. Mostrar los títulos de los libros, el nombre de su autor, y el nombre de la categoría 'Ciencia Ficción'.
+19. Listar los usuarios que han dejado reseñas con calificación menor a 3, mostrando el nombre del usuario, el título del libro reseñado y la calificación.
+20. Obtener el título del libro, el nombre de su editorial y el país de origen de la editorial, para libros publicados después del año 2000 por editoriales de 'España'.

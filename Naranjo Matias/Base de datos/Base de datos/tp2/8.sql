@@ -1,0 +1,1 @@
+SELECT nombre FROM autores WHERE nacionalidad = "Argentina" or "Mexicano";
