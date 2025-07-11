@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trabajo Práctico DOM</title>
+<style>
+    .activo {
+    background-color: #88c0d0;
+    color: #2e3440;
+    border: 2px solid #5e81ac;
+    padding: 1rem;
+    font-weight: bold;
+    }
+
+    .completada {
+    text-decoration: line-through;
+    }
+
+    .tarjeta-producto {
+    border: 2px solid #5e81ac;
+    background-color: #eceff4;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    max-width: 300px;
+    font-family: sans-serif;
+    }
+</style>
+</head>
+<body>
+<!-- Ejercicio 1.1 -->
+<h1 id="tituloPrincipal">Mi Página Web</h1>
+<p id="parrafoIntro">Bienvenido a mi sitio.</p>
+
+<!-- Ejercicio 1.2 -->
+<div class="contenedor">
+    <p>Primer párrafo.</p>
+    <p class="destacado">Segundo párrafo destacado.</p>
+</div>
+<button id="miBoton">Haz Click</button>
+
+<!-- Ejercicio 1.3 -->
+<ul>
+    <li class="item-lista">Manzana</li>
+    <li class="item-lista">Banana</li>
+    <li class="item-lista">Naranja</li>
+</ul>
+
+<!-- Ejercicio 2.1 -->
+<h1 id="titulo">Título Original</h1>
+<p id="subtitulo">Este es el subtítulo original.</p>
+
+<!-- Ejercicio 2.2 -->
+<img id="imagenPrincipal" src="https://placehold.co/300x200/cccccc/333333?text=Imagen+1" alt="Una imagen de placeholder" />
+
+<!-- Ejercicio 3.1 -->
+<p id="textoCambiante">Este texto cambiará de color.</p>
+
+<!-- Ejercicio 3.2 -->
+<div id="miCaja">Este es un div simple.</div>
+<button id="botonActivar">Activar Estilos</button>
+
+<!-- Ejercicio 4.1 -->
+<ul id="listaDinamica">
+<li>Primer ítem (existente)</li>
+</ul>
+
+<!-- Ejercicio 5.1 -->
+<button id="botonAlerta">¡Hazme Click!</button>
+
+<!-- Ejercicio 5.2 -->
+<button id="botonContador">Clics: 0</button>
+
+<!-- Ejercicio 6: Lista de Tareas -->
+<h1>Mi Lista de Tareas</h1>
+<input type="text" id="nuevaTareaInput" placeholder="Añadir nueva tarea" />
+<button id="agregarTareaBtn">Agregar</button>
+<ul id="listaTareas"></ul>
+
+<!-- Enlazar el script -->
+<script src="app.js"></script>
+</body>
+</html>
