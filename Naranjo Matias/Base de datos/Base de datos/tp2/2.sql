@@ -1,0 +1,1 @@
+SELECT fecha_devolucion FROM prestamos;

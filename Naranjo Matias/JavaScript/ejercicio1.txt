@@ -1,0 +1,29 @@
+console.log("Try programiz.pro");
+
+let precioBase = 1000;
+let edadPasajero = Number(prompt("Edad del Pasajero: "));
+let esTemporadaAlta = Math.random()
+let metodo = prompt ("Efectivo o Tarjeta?");
+let nuevoPrecio = precioBase;
+
+if (edadPasajero < 2) {
+     nuevoPrecio = (precioBase*0.9);
+} else if (edadPasajero >2 && edadPasajero <= 12 ) {
+     nuevoPrecio = (precioBase*0.4);
+} else if (edadPasajero > 65 ) {
+     nuevoPrecio = (precioBase*0.6)
+}
+
+
+if (esTemporadaAlta < 0.5) {
+    nuevoPrecio = (nuevoPrecio + (nuevoPrecio*0.15));
+} else {nuevoPrecio = nuevoPrecio}
+
+if (metodo == Tarjeta) {
+    nuevoPrecio = (nuevoPrecio + (nuevPrecio*0.18));
+} else { nuevoPrecio = nuevoPrecio}
+
+    
+    
+    console.log (nuevoPrecio)
+    console.log (esTemporadaAlta)

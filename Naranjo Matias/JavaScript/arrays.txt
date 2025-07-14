@@ -1,0 +1,35 @@
+let miarray = [12,25,92,50];
+ console.log (miarray); 
+ 
+ miarray.push(55);
+ miarray.push(40);
+ 
+  console.log (miarray); 
+ console.log(miarray.length) ;
+ 
+ let dias_de_la_semana = ["lunes","martes","miercoles","jueves"];
+ console.log (dias_de_la_semana); 
+ dias_de_la_semana.push("viernes");
+ dias_de_la_semana.push("sabado");
+ dias_de_la_semana.push("domingo");
+ console.log (dias_de_la_semana); 
+ 
+ 
+ 
+  console.log(dias_de_la_semana[0]) ;
+  console.log(dias_de_la_semana[1]) ;
+  console.log(dias_de_la_semana[2]) ;
+  console.log(dias_de_la_semana[3]) ;
+  console.log(dias_de_la_semana[4]) ;
+  console.log(dias_de_la_semana[5]) ;
+  console.log(dias_de_la_semana[6]) ;
+  
+  
+  
+  for (let i=0;i<10;i++){
+  
+  console.log(i);
+  }
+  
+  
+

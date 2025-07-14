@@ -1,0 +1,35 @@
+let precioBase = 10;
+let edadesPasajeros = [5,68,25,1,12,30,70];
+let ingresoTotal = 0;
+let contadorInfantes = 0;
+let contadorNiños = 0;
+let contadorMayores = 0;
+let contadorRegulares = 0;
+
+for (let i=0;i<edadesPasajeros.length;i++){
+    let edad = edadesPasajeros[i] ;
+    let descuento =0;
+  
+    if (edad < 2) {
+      descuento = 0.90;
+      contadorInfantes++;
+    } else if (edad >= 2 && edad <= 12) {
+      descuento = 0.40;
+      contadorNiños++;
+    } else if (edad > 65) {
+      descuento = 0.60;
+      contadorMayores++;
+    } else {
+      contadorRegulares++;
+    }
+
+    let precioFinal = precioBase * (1 - descuento);
+    ingresoTotal = ingresoTotal + precioFinal;
+  }
+  
+  console.log(ingresoTotal);
+  console.log("Infantes: " + contadorInfantes);
+  console.log("Niños:" + contadorNiños);
+  console.log("Mayores: " + contadorMayores);
+  console.log("Regulares: " + contadorRegulares);
+  

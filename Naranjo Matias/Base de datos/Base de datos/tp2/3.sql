@@ -1,0 +1,1 @@
+SELECT titulo FROM libros WHERE ano_publicacion > 1970;

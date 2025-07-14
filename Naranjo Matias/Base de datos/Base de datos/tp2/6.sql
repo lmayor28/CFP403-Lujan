@@ -1,0 +1,1 @@
+SELECT id_libros FROM prestamos WHERE fecha_devolucion is NOT NULL;
