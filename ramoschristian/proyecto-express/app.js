@@ -176,3 +176,118 @@ bd.run(sql,[10,3], function(err){
     console.log("el stock fue aumentado en 10 unidades");
 })
 
+
+// 5.1
+
+
+bd.run(`DELETE FROM usuarios WHERE email = ?`,[`carlos.garcia@example.com`],function(err){
+    if(err) return console.error(err);
+    console.log("se elimino al usuario");
+})
+
+
+bd.all(`SELECT * FROM usuarios`,[],(err,rows) => {
+    if(err) throw err;
+    rows.forEach(row => {
+        console.log(row.nombre);
+    })
+})
+
+
+// 5.2
+
+bd.run(`DELETE FROM productos WHERE stock = ?`,[0],function(err){
+    if(err) throw err;
+    console.log(`filas eliminadas ${this.changes}`);
+})
+
+
+// 6
+
+
+let sql = `INSERT INTO productos (nombre,precio,stock) VALUES (?,?,?)`;
+let parametros = ["Mouse Logitech", 50, 10];
+
+
+function llamadas(){
+    bd.run(sql,parametros,function(err){
+    if(err){
+        return console.error(`Error al insertar ${err.message}`)
+    }
+    console.log(`Producto insertado con id ${this.lastID}`);
+    })
+}
+
+
+async function cerrarbd(){
+    try{
+        await llamadas();
+        bd.close(err =>{
+            if(err) return console.error(err.message);
+            console.log("se cerro la conexion a la base de datos");
+        })
+    } catch(error){
+        console.error(error);
+    }
+}
+cerrarbd();
+  
+// 7.1
+
+
+bd.run(`CREATE TABLE IF NOT EXISTS post (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        titulo TEXT NOT NULL,
+        contenido TEXT NOT NULL,
+        autor_id INTEGER,
+        FOREIGN KEY (autor_id) REFERENCES usuarios (id)
+);`,(err)=> {
+    if(err) return console.error("no se pudo crear la tabla");
+    console.log("se creo la tabla correctamente");
+})
+
+
+bd.run(`INSERT INTO post (titulo,contenido,autor_id) VALUES (?,?,?)`,["Post usuario 2","contenido del post1",2],function(err){
+    if(err) return console.error(err.message);
+    console.log(`Post insertado en la fila: ${this.lastID}`);
+})
+
+
+bd.run(`INSERT INTO post (titulo,contenido,autor_id) VALUES (?,?,?)`,["Post usuario 1","contenido del post2",1],function(err){
+    if(err) return console.error(err.message);
+    console.log(`Post insertado en la fila: ${this.lastID}`);
+})
+
+
+bd.run(`INSERT INTO post (titulo,contenido,autor_id) VALUES (?,?,?)`,["2do post usuario 1","contenido del post3",1],function(err){
+    if(err) return console.error(err.message);
+    console.log(`Post insertado en la fila: ${this.lastID}`);
+})
+
+
+let sql = `SELECT post.titulo, post.contenido , usuarios.nombre AS nombre_autor FROM post JOIN usuarios ON post.autor_id = usuarios.id`;
+
+
+bd.all(sql,[],(err,rows) => {
+    if(err) throw err;
+    rows.forEach(row => {
+        console.log(`Autor: ${row.nombre_autor} Titulo: ${row.titulo} Contenido: ${row.contenido}`);
+    })
+})
+
+
+// 7.2
+
+async function query(sql,params){
+    try {
+        await bd.all(sql,params, (err,rows) => {
+            if(err) throw err;
+            rows.forEach(row => {
+                console.log(row.nombre);
+            })
+        })
+    } catch(error){
+        console.log(error.message);
+    }
+}
+query(`SELECT * FROM usuarios ORDER BY nombre`,[])
