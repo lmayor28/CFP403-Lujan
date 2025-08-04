@@ -1,0 +1,29 @@
+RUTAS:
+
+MOSTRAR TODO EL CATALOGO:
+
+/catalogo
+
+MOSTRAR POR BUZOS
+
+/catalogo/buzos
+
+/catalogo/buzos/capucha
+
+/catalogo/buzos/CuelloRedondo
+
+MOSTRAR REMERAS
+
+/catalogo/remeras
+
+PROMOS
+
+/catalogo/promos
+
+PANTALONES
+
+/catalogo/pantalones
+
+CAMPERAS
+
+/catalogo/camperas
