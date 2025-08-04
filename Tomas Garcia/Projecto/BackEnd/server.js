@@ -180,9 +180,34 @@ app.get(`/admin/productos`, (req,res) => {
     });
 })
 
-app.get(`/admin/productos/:id`, (req,res) => {
-    
+app.put(`/admin/productos/:id/editar`, (req,res) => {
+    let id = req.params;
+    let {nombre, descripcion, precio, color, material, stock_total, destacado} = req.body;
+
+    let sql = `UPDATE productos SET nombre = ?, descripcion = ?, precio = ?, color = ?, material = ?, stock_total = ?, destacado = ? WHERE id_producto = ?`;
+    bd.run(sql,[nombre,descripcion,precio,color,material,stock_total,destacado,id], function(err){
+        if(err) return res.status(400).json({error: err.message});
+        if(this.changes > 0){
+            res.status(200).json({
+                message: `Producto actualizado`,
+                producto: {id: Number(id), nombre, descripcion,precio,color,material,stock_total,destacado}
+            });
+        };
+    });
 })
+
+app.delete(`/admin/productos/:id/borrar`, (req,res) => {
+    let id = req.params.id;
+    let sql = `DELETE FROM productos WHERE id_producto = ?`;
+    bd.run(sql,[id], function(err){
+        if(err) return res.status(400).json({error: err.message});
+        if(this.changes > 0){
+            res.status(200).json({
+                message: `Producto Eliminado`
+            });
+        };
+    });
+});
 
 app.listen(puerto,() => {
     console.log(`Servidor escuchando en http://localhost:${puerto}`);
