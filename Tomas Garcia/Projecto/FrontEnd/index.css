@@ -1,0 +1,27 @@
+:root {
+    --oro: #B8860B;
+    --gris: #999999;
+    --negro: #000000;
+    --blanco: #ffffff;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+}
+
+.header__titulo {
+    padding-top: 20px;
+    align-items: center;
+}
+
+body {
+    color: var(--gris);
+    background-color: var(--negro);
+}
+
+.header {
+    display: flex;
+    justify-content: space-evenly;
+}

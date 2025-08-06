@@ -18,7 +18,6 @@ let bd = new sqlite3.Database(".overman.db", err => {
                     console.error(`Error al crear tabla de Categorias: ${err.message}`)
                 } else {
                     console.log(`Tabla "categorias" creada`);
-                    
                 }
             });
 
@@ -93,7 +92,7 @@ app.get(`/`, (req,res) => {
 });
 
 // RUTAS CATEGORIAS --------------------------------------------------------------------------------------------------
-app.post("/admin/categorias/crear", (req,res) => {
+app.post("/admin/categorias", (req,res) => {
     let { nombre, descripcion} = req.body;
     
     if(!nombre || descripcion === undefined) {
@@ -110,7 +109,7 @@ app.post("/admin/categorias/crear", (req,res) => {
     });
 });
 
-app.get(`/admin/categorias`, (req,res) => {
+app.get(`/categorias`, (req,res) => {
     let sql = `SELECT * FROM categorias`;
     bd.all(sql,[],(err, rows) => {
         if(err) return res.status(500).json({ error: err.message});
@@ -118,7 +117,7 @@ app.get(`/admin/categorias`, (req,res) => {
     })
 });
 
-app.put(`/admin/categorias/:id/editar`, (req,res) => {
+app.put(`/admin/categorias/:id`, (req,res) => {
     let id = req.params.id;
     let {nombre, descripcion} = req.body;
 
@@ -138,7 +137,7 @@ app.put(`/admin/categorias/:id/editar`, (req,res) => {
     });
 });
 
-app.delete(`/admin/categorias/:id/borrar`, (req,res) => {
+app.delete(`/admin/categorias/:id`, (req,res) => {
     let id = req.params.id;
     let sql = `DELETE FROM categorias WHERE id_categoria = ?`;
     bd.run(sql,[id],function(err) {
@@ -155,7 +154,7 @@ app.delete(`/admin/categorias/:id/borrar`, (req,res) => {
 
 // RUTAS PRODUCTOS ------------------------------------------------------------------------------
 
-app.post(`/admin/productos/crear`, (req,res) => {
+app.post(`/admin/productos`, (req,res) => {
     let {nombre, descripcion, precio, color, material, stock_total, destacado, id_categoria, id_subcategoria} = req.body;
     
     if( nombre || descripcion || precio || color || stock_total || id_categoria === undefined) {
@@ -172,7 +171,7 @@ app.post(`/admin/productos/crear`, (req,res) => {
     });
 });
 
-app.get(`/admin/productos`, (req,res) => {
+app.get(`/productos`, (req,res) => {
     let sql = `SELECT * FROM productos`;
     bd.all(sql,[], (err,rows) => {
         if(err) return res.status(500).json({error: err.message});
@@ -180,23 +179,50 @@ app.get(`/admin/productos`, (req,res) => {
     });
 })
 
-app.put(`/admin/productos/:id/editar`, (req,res) => {
-    let id = req.params;
-    let {nombre, descripcion, precio, color, material, stock_total, destacado} = req.body;
+app.get(`/productos/:id`, (req,res) => {
+    let {id} = req.params;
+    let sql = `SELECT * FROM productos WHERE id_producto = ?`;
+    bd.get(sql,[id],(err,row) => {
+        if(err) return res.status(500).json({error : err.message});
+        if(row) {
+            res.status(200).json({producto : row})
+        } else {
+            res.status(404).json({message : `el producto con el id: ${id} no se encuentra registrado`})
+        }
+    })
+})
 
-    let sql = `UPDATE productos SET nombre = ?, descripcion = ?, precio = ?, color = ?, material = ?, stock_total = ?, destacado = ? WHERE id_producto = ?`;
-    bd.run(sql,[nombre,descripcion,precio,color,material,stock_total,destacado,id], function(err){
+app.put(`/admin/productos/:id`, (req,res) => {
+    let {id} = req.params;
+    let datos = req.body;
+    let parametros = [];
+    let sql = `UPDATE productos SET`;
+    let i = 0;
+    
+    for(let prop in datos) {
+        parametros.push(datos[prop]);
+        if((i + 1) == Object.keys(datos).length){
+            sql += ` ${prop} = ? WHERE id_producto = ?`;
+        } else {
+            sql += ` ${prop} = ?, `;
+        }
+        i++;
+    }
+    parametros.push(id);
+    
+    bd.run(sql,parametros, function(err){
         if(err) return res.status(400).json({error: err.message});
         if(this.changes > 0){
             res.status(200).json({
                 message: `Producto actualizado`,
-                producto: {id: Number(id), nombre, descripcion,precio,color,material,stock_total,destacado}
             });
-        };
+        } else {
+            res.status(404).json({message : `el producto con el id: ${id} no se encuentra registrado`})
+        }
     });
 })
 
-app.delete(`/admin/productos/:id/borrar`, (req,res) => {
+app.delete(`/admin/productos/:id`, (req,res) => {
     let id = req.params.id;
     let sql = `DELETE FROM productos WHERE id_producto = ?`;
     bd.run(sql,[id], function(err){
