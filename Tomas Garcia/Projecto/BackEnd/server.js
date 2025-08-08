@@ -1,8 +1,10 @@
 let express = require("express");
 let sqlite3 = require("sqlite3");
+const cors = require('cors');
 let app = express();
 let puerto = 8080;
 
+app.use(cors());
 app.use(express.json());
 
 let bd = new sqlite3.Database(".overman.db", err => {

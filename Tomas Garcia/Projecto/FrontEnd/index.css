@@ -5,23 +5,104 @@
     --blanco: #ffffff;
 }
 
-.logo {
-    width: 150px;
-    height: 150px;
-    background-color: #fff;
-}
-
-.header__titulo {
-    padding-top: 20px;
-    align-items: center;
-}
-
+/* GENERALES ----------------------------------------------------------------- */
 body {
     color: var(--gris);
-    background-color: var(--negro);
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
+.container {
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+/* HEADER ------------------------------------------------------------------------ */
+.header__titulo {
+    vertical-align: center;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.header__titulo span {
+    font-size: 0.8rem;
 }
 
 .header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--negro);
 }
+
+.bg {
+    background-color: var(--negro);
+}
+
+.header__nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.header__nav a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.header__nav a:hover {
+    color: var(--oro);
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    margin-left: 2.5rem;
+}
+
+/* ADMIN ---------------------------------------- */
+
+.administracion {
+    background-color: var(--blanco);
+    color: var(--negro);
+}
+
+.administracion__titulo {
+    margin: 2rem 0 2rem 0;
+}
+
+.flex {
+    display: flex;
+    margin: 0 auto;
+    gap: 3rem;
+}
+
+.productos,.categorias {
+    position: relative;
+    flex: 1;
+}
+#categorias__lista {
+    list-style: none;
+}
+.categorias__titulo, .productos__titulo {
+    text-align: center;
+    display: inline-block;
+}
+
+
+/* JS class */
+.lapiz {
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    cursor: pointer;
+}
+
+.negrita {
+    font-weight: bold;
+}
+
+
