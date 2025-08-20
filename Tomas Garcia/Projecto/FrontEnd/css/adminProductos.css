@@ -12,21 +12,21 @@ table, th, td {
 }
 
 th {
-    background-color: var(--oro);
+    background-color: var(--negro);
     color: var(--blanco);
     padding: 8px;
 }
 
 td {
     padding: 8px;
-    background-color: var(--negro);
-    color: var(--blanco);
+    background-color: var(--blanco);
+    color: var(--negro);
     text-align: center;
 }
 
 #productos {
-    background-color: var(--negro);
-    color: var(--gris);
+    background-color: var(--blanco);
+    color: var(--negro);
     padding: 2rem 0;
 }
 
