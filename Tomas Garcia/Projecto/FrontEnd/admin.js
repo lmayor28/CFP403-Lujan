@@ -153,7 +153,7 @@ document.addEventListener(`DOMContentLoaded`, () => {
     }
 
     let obtenerSubCategorias = (idCategoria) => {
-    axios.get(`${url_api}/subcategorias/${idCategoria}`)
+        axios.get(`${url_api}/subcategorias/${idCategoria}`)
             .then(response => {
                 let subcategorias = response.data.subcategorias;
                 let selectSub = document.getElementById("form__subCategorias");
@@ -167,9 +167,13 @@ document.addEventListener(`DOMContentLoaded`, () => {
                     selectSub.appendChild(opt);
                 } else {
                     subcategorias.forEach(sub => {
+                        let SinCategoria = document.createElement("option");
+                        SinCategoria.value = null;
+                        SinCategoria.textContent = "--Elegir Subcategoria--";
                         let option = document.createElement("option");
                         option.value = sub.id_subcategoria;
                         option.textContent = sub.nombre;
+                        selectSub.appendChild(SinCategoria)
                         selectSub.appendChild(option);
                     });
                 }
@@ -181,11 +185,13 @@ document.addEventListener(`DOMContentLoaded`, () => {
                 opt.value = "";
                 opt.textContent = "No hay subcategorías";
                 selectSub.appendChild(opt);
-            });
+        });
     }
 
     document.getElementById("formProductos").addEventListener("submit", (e) => {
         e.preventDefault();
+
+        let subcat = document.getElementById("form__subCategorias").value;
 
         let producto = {
             nombre: document.getElementById("nombre").value,
@@ -196,19 +202,17 @@ document.addEventListener(`DOMContentLoaded`, () => {
             stock_total: document.getElementById("stock_total").value,
             destacado: document.getElementById("destacado").value,
             id_categoria: document.getElementById("producto_categoria").value,
-            id_subcategoria: document.getElementById("form__subCategorias").value || null
+            id_subcategoria: subcat === "" ? null : subcat   // ✅ si elige "sin subcategoría" → null
         };
-
-        console.log(producto);
-        
 
         axios.post(`${url_api}/admin/productos`, producto)
             .then(res => {
                 alert("✅ Producto creado: " + res.data.producto.nombre);
-                document.getElementById("formProductos").reset(); 
+                document.getElementById("formProductos").reset();
             })
             .catch(err => {
                 alert("❌ Error al crear el producto");
+                console.error(err.response ? err.response.data : err);
             });
     });
 

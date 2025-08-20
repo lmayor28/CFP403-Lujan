@@ -191,8 +191,16 @@ app.post(`/admin/productos`, (req,res) => {
         return res.status(400).json({error: `por favor ingrese todos los datos` });
     }
 
-    let sql = `INSERT INTO productos (nombre,descripcion,precio,color,material,stock_total,destacado,id_categoria,id_subcategoria) VALUES (?,?,?,?,?,?,?,?,?)`;
-    bd.run(sql,[nombre,descripcion,precio,color,material,stock_total,destacado,id_categoria,id_subcategoria], function(err) {
+    // ✅ Si no se selecciona, guardamos null
+    if (!id_subcategoria || id_subcategoria === "") {
+        id_subcategoria = null;
+    }
+
+    let sql = `INSERT INTO productos 
+        (nombre, descripcion, precio, color, material, stock_total, destacado, id_categoria, id_subcategoria) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+
+    bd.run(sql, [nombre, descripcion, precio, color, material, stock_total, destacado, id_categoria, id_subcategoria], function(err) {
         if(err) return res.status(500).json({error : err.message});
         res.status(201).json({
             message: "Producto creado exitosamente",

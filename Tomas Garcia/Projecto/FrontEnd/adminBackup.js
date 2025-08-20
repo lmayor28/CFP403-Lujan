@@ -153,12 +153,12 @@ document.addEventListener(`DOMContentLoaded`, () => {
     }
 
     let obtenerSubCategorias = (idCategoria) => {
-        axios.get(`${url_api}/subcategorias/${idCategoria}`)
+    axios.get(`${url_api}/subcategorias/${idCategoria}`)
             .then(response => {
                 let subcategorias = response.data.subcategorias;
                 let selectSub = document.getElementById("form__subCategorias");
 
-                
+                selectSub.innerHTML = "";
 
                 if (subcategorias.length === 0) {
                     let opt = document.createElement("option");
@@ -181,13 +181,11 @@ document.addEventListener(`DOMContentLoaded`, () => {
                 opt.value = "";
                 opt.textContent = "No hay subcategorías";
                 selectSub.appendChild(opt);
-        });
+            });
     }
 
     document.getElementById("formProductos").addEventListener("submit", (e) => {
         e.preventDefault();
-
-        let subcat = document.getElementById("form__subCategorias").value;
 
         let producto = {
             nombre: document.getElementById("nombre").value,
@@ -198,17 +196,19 @@ document.addEventListener(`DOMContentLoaded`, () => {
             stock_total: document.getElementById("stock_total").value,
             destacado: document.getElementById("destacado").value,
             id_categoria: document.getElementById("producto_categoria").value,
-            id_subcategoria: subcat === "" ? null : subcat   // ✅ si elige "sin subcategoría" → null
+            id_subcategoria: document.getElementById("form__subCategorias").value || null
         };
+
+        console.log(producto);
+        
 
         axios.post(`${url_api}/admin/productos`, producto)
             .then(res => {
                 alert("✅ Producto creado: " + res.data.producto.nombre);
-                document.getElementById("formProductos").reset();
+                document.getElementById("formProductos").reset(); 
             })
             .catch(err => {
                 alert("❌ Error al crear el producto");
-                console.error(err.response ? err.response.data : err);
             });
     });
 
