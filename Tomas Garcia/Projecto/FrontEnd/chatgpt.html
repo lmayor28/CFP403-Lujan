@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel de Administración</title>
+<style>
+    :root {
+        --oro: #B8860B;
+        --gris: #999999;
+        --negro: #000000;
+        --blanco: #ffffff;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: var(--negro);
+        color: var(--blanco);
+        margin: 0;
+    }
+
+    /* HEADER */
+  
+
+.container {
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--negro);
+}
+
+.bg {
+    background-color: var(--negro);
+}
+
+.header__nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.header__nav a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.header__nav a:hover {
+    color: var(--oro);
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    margin-left: 2.5rem;
+}
+
+    /* SIDEBAR */
+    nav.sidebar {
+        background: linear-gradient(180deg, var(--negro) 0%, #1a1a1a 100%);
+        padding: 20px;
+        border-right: 2px solid var(--oro);
+    }
+
+    nav.sidebar a {
+        display: block;
+        color: var(--blanco);
+        padding: 10px;
+        margin: 5px 0;
+        background-color: rgba(184, 134, 11, 0.2);
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    nav.sidebar a:hover {
+        background-color: var(--oro);
+        color: var(--negro);
+    }
+
+    /* MAIN CONTENT */
+    main {
+        padding: 20px;
+    }
+
+    h2 {
+        border-bottom: 2px solid var(--oro);
+        padding-bottom: 5px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    table, th, td {
+        border: 1px solid var(--gris);
+    }
+
+    th {
+        background-color: var(--oro);
+        color: var(--blanco);
+        padding: 8px;
+    }
+
+    td {
+        padding: 8px;
+        background-color: var(--blanco);
+        color: var(--negro);
+    }
+
+    /* BUTTONS */
+    .btn {
+        padding: 6px 12px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 0.9em;
+    }
+
+    .btn-add {
+        background-color: var(--oro);
+        color: var(--blanco);
+        margin-bottom: 10px;
+    }
+
+    .btn-edit {
+        background-color: var(--gris);
+        color: var(--blanco);
+    }
+
+    .btn-delete {
+        background-color: crimson;
+        color: var(--blanco);
+    }
+</style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="bg">
+        <header class="header container">
+            <h1 class="header__titulo">Overman <span>Indumentaria</span></h1>
+            <a href="/index.html">
+                <img class="logo" src="/src/img/untitled.svg" alt="logo Overman">
+            </a>
+            
+            <nav class="header__nav">
+                <a href="/index.html">inicio</a>
+                <a href="/admin.html">Admin</a>
+                <a href="#">Productos</a>
+                <a href="#">Carrito</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </header>
+    </div>  
+
+    <!-- LAYOUT -->
+    <div class="container">
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <a href="#">Categorías</a>
+            <a href="#">Subcategorías</a>
+            <a href="#">Productos</a>
+            <a href="#">Imágenes</a>
+            <a href="#">Talles</a>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <h2>Productos</h2>
+            <button class="btn btn-add">+ Agregar Producto</button>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Stock Total</th>
+                    <th>Acciones</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Remera Negra</td>
+                    <td>$2500</td>
+                    <td>15</td>
+                    <td>
+                        <button class="btn btn-edit">Editar</button>
+                        <button class="btn btn-delete">Eliminar</button>
+                    </td>
+                </tr>
+            </table>
+        </main>
+    </div>
+</body>
+</html>

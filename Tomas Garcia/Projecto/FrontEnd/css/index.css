@@ -1,0 +1,80 @@
+@import url(header.css);
+@import url(adminProductos.css);
+@import url(formulario.css);
+@import url(productos.css);
+
+:root {
+    --oro: #B8860B;
+    --gris: #999999;
+    --negro: #000000;
+    --blanco: #ffffff;
+}
+
+/* GENERALES ----------------------------------------------------------------- */
+body {
+    color: var(--gris);
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
+h1 {
+    cursor: default;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+
+
+/* ADMIN ---------------------------------------- */
+
+.administracion {
+    color: #000000;
+}
+
+.administracion__titulo {
+    margin: 2rem 0;
+}
+
+.flex {
+    display: flex;
+    margin: 0 auto;
+    gap: 3rem;
+    color: #000000;
+}
+
+.categorias, .subcategorias {
+    flex: 1;
+}
+
+.separacion {
+    border: 1px solid #000000;
+    border-radius: 100%;
+}
+
+
+/* Admin Categorias--------------------- */
+
+.negrita {
+    font-weight: bold;
+}
+
+.flex {
+    margin-top: 2rem;
+}
+
+.carousel {
+    width: 200px;
+}
+.carousel-item img {
+    height: 200px;
+}

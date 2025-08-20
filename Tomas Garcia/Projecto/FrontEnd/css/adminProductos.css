@@ -1,0 +1,77 @@
+/* Tabla */
+
+table {
+    width: 98%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    margin: 0 auto;
+}
+
+table, th, td {
+    border: 1px solid var(--gris);
+}
+
+th {
+    background-color: var(--oro);
+    color: var(--blanco);
+    padding: 8px;
+}
+
+td {
+    padding: 8px;
+    background-color: var(--negro);
+    color: var(--blanco);
+    text-align: center;
+}
+
+#productos {
+    background-color: var(--negro);
+    color: var(--gris);
+    padding: 2rem 0;
+}
+
+.precio {
+    color: #B8860B;
+}
+.precio span {
+    color: var(--negro);
+}
+
+/* MODAL ----------------- */
+
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 100; 
+  left: 0; 
+  top: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.5); 
+  justify-content: center; 
+  align-items: center;
+}
+
+.modal__contenido {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+}
+
+#formEditar input{
+    width: 100%;
+}
+#formEditar select {
+    display: block;
+}
+
+#formEditar label {
+    font-weight: bold;
+}
+
+.cerrar {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}

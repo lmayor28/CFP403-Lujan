@@ -1,0 +1,9 @@
+#formProductos {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.campo_input input, select{
+    width: 100%;
+}
+

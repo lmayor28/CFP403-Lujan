@@ -8,29 +8,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <div class="bg">
         <header class="header container">
             <h1 class="header__titulo">Overman <span>Indumentaria</span></h1>
             <a href="/index.html">
-                <img class="logo" src="/src/img/untitled.svg" alt="logo Overman">
+                <img class="logo" src="/src/img/logo.svg" alt="logo Overman">
             </a>
             
             <nav class="header__nav">
-                <a href="index.html">inicio</a>
+                <a href="/index.html">inicio</a>
+                <a href="/admin.html">Admin</a>
                 <a href="#">Productos</a>
                 <a href="#">Carrito</a>
                 <a href="#">Contacto</a>
             </nav>
         </header>
     </div>  
-    
+    <section class="hero">
+        <div class="contenido-hero">
 
-    <Section>
-        <h2></h2>
-    </Section>
-
+        </div>
+    </section>
+    <section class="productos container my-5">
+        <h2 class="mb-4 text-center">Nuestros Productos</h2>
+        <div id="productosGrid" class="productos__grid"></div>
+    </section>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -1,0 +1,42 @@
+/* HEADER ------------------------------------------------------------------------ */
+.header__titulo {
+    vertical-align: center;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.header__titulo span {
+    font-size: 0.8rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--negro);
+}
+
+.bg {
+    background-color: var(--negro);
+}
+
+.header__nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.header__nav a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.header__nav a:hover {
+    color: var(--oro);
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    margin-left: 7.5rem;
+}
